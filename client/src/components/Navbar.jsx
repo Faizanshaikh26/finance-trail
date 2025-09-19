@@ -158,7 +158,7 @@ const Navbar = () => {
       </div>
 
       {/* Spacer div so content doesn't hide behind fixed navbar */}
-      <div className="pt-[69px]"></div>
+      <div className="pt-[77px] md:pt-[69px]"></div>
     </>
   );
 };

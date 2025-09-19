@@ -177,7 +177,7 @@ export function ProcessSection() {
           </div>
         </div>
 
-      <div className="py-10">
+      <div className="md:py-10">
       <h2 className="text-center text-lg font-semibold mb-6">
         Processing Timeline
       </h2>

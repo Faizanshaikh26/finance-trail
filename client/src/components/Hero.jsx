@@ -15,7 +15,7 @@ const Hero = () => {
           {/* Left Content */}
           <div className="flex-1 text-center md:text-left">
             {/* Trusted Badge */}
-            <div className="inline-block mb-6 bg-white border border-blue-200 text-blue-700 text-sm font-medium px-4 py-1 rounded-full shadow-sm">
+            <div className="inline-block mt-4 md:mt-0 :mb-6 bg-white border border-blue-200 text-blue-700 text-sm font-medium px-4 py-1 rounded-full shadow-sm">
               ⭐ Trusted by 10,000+ Clients
             </div>
 
@@ -43,7 +43,7 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Image with Floating Cards */}
-          <div className="flex-1 relative flex justify-center">
+          <div className="flex-1 relative  flex justify-center">
             <img
               src={hero}
               alt="Businessman"
