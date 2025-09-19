@@ -37,7 +37,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="py-16 bg-gray-50">
+    <>
       <div className="py-12 md:py-16  px-4 sm:px-32  bg-[#F2F2F2] lg:px-44 w-full">
         {/* Section Header */}
         <div className=" mb-12">
@@ -79,8 +79,9 @@ export default function ServicesSection() {
 
 <ProcessSection/>
 
+</>
  
-    </section>
+ 
   )
 }
 

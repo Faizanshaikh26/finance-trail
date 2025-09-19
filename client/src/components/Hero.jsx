@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className=" md:py-16 flex justify-center px-4 sm:px-32  lg:px-44 w-full  " style={{
+      <section className=" md:pt-40 pb-10 flex justify-center px-4 sm:px-32  lg:px-44 w-full  " style={{
         background: "linear-gradient(180deg, #D8F0FF 0%, #FFFFFF 100%)"
 
     }}>
@@ -150,7 +150,7 @@ const Hero = () => {
       </section>
 
       {/* Core Values Section */}
-      <section className="  md:py-16  px-4 sm:px-32  lg:px-44 w-full">
+      <section className="  px-4 sm:px-32  lg:px-44 w-full">
         <div className="mb-10 sm:mb-12 text-center ">
           <h3 className="text-xl sm:text-2xl md:text-4xl py- font-bold text-gray-900">
             Our Core Values

@@ -11,7 +11,7 @@ const Vision = () => {
   ];
 
   return (
-    <div className="text-gray-800 px-4 sm:px-6 md:px-10 lg:px-20 py-12 w-full">
+    <div className="text-gray-800 px-4 sm:px-6 md:px-10 lg:px-20 py-10 w-full">
       {/* Vision & Mission */}
       <section className="mb-20">
         <div className="mb-10 text-center">
