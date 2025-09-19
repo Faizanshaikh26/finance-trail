@@ -1,0 +1,209 @@
+import React from "react"
+import { Home, Building2, User, TrendingUp, Shield, PiggyBank, Search, Banknote } from "lucide-react"
+import { FileText, FileCheck, CheckCircle, Wallet } from "lucide-react"
+
+const services = [
+  {
+    icon: Home,
+    title: "Home Loans",
+    description: "Affordable home financing with flexible terms and fast approval",
+  },
+  {
+    icon: Building2,
+    title: "Business Loans",
+    description: "Customized funding and expert support to expand your business.",
+  },
+  {
+    icon: User,
+    title: "Personal Loans",
+    description: "Instant personal funds with easy paperwork and quick disbursal.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Investment Advisory",
+    description: "Professional investment strategies to grow and protect your wealth.",
+  },
+  {
+    icon: Shield,
+    title: "Insurance",
+    description: "Reliable coverage to safeguard your family and assets.",
+  },
+  {
+    icon: PiggyBank,
+    title: "Savings Plans",
+    description: "Goal-oriented savings and fixed deposits with competitive returns.",
+  },
+]
+
+export default function ServicesSection() {
+  return (
+    <section className="py-16 bg-gray-50">
+      <div className="py-12 md:py-16  px-4 sm:px-32  bg-[#F2F2F2] lg:px-44 w-full">
+        {/* Section Header */}
+        <div className=" mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
+          <p className="text-gray-600 text-2xl  mx-auto">
+            Comprehensive financial solutions designed to meet your unique needs and goals.
+          </p>
+        </div>
+
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => {
+            const Icon = service.icon
+            return (
+              <div
+                key={index}
+                className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-shadow"
+              >
+                {/* Icon */}
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                  <Icon className="w-6 h-6 text-blue-600" />
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
+
+                {/* Description */}
+                <p className="text-gray-600 text-sm mb-4">{service.description}</p>
+
+                {/* Button */}
+                <button className="px-4 py-2 text-sm font-medium rounded-lg border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition">
+                  Learn More
+                </button>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
+<ProcessSection/>
+
+ 
+    </section>
+  )
+}
+
+
+
+
+
+
+
+
+
+
+
+const steps = [
+  {
+    number: "1",
+    icon: FileText,
+    title: "Submit Application",
+    timeline: "24-48 hrs",
+    subtitle: "Initial Approve",
+  },
+  {
+    number: "2",
+    icon: Search,
+    title: "Document Review",
+    timeline: "3-7 days",
+    subtitle: "Documentation",
+  },
+  {
+    number: "3",
+    icon: CheckCircle,
+    title: "Approval & verification",
+    timeline: "Processing Timeline",
+    subtitle: "",
+  },
+  {
+    number: "4",
+    icon: Banknote,
+    title: "Disbursement",
+    timeline: "7-15 days",
+    subtitle: "Final Disbursement",
+  },
+]
+
+
+const psteps = [
+    { time: "24-48 hrs", label: "Initial Approve" },
+    { time: "3-7 days", label: "Documentation" },
+    { time: "7-15 days", label: "Final Disbursement" },
+  ];
+
+
+
+export function ProcessSection() {
+  return (
+    <section className="md:py-12 ">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-foreground mb-4">Simple - 4-step Process</h2>
+          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
+            Getting your financial solution has never been easier. Follow our streamlined process for quick approvals
+            and hassle-free experience.
+          </p>
+        </div>
+
+        <div className="relative max-w-4xl mx-auto">
+          {/* Progress line connecting all steps */}
+          <div className="absolute top-8 left-0 right-0 h-0.5 bg-primary/20 hidden lg:block">
+            <div className="h-full bg-primary w-3/4"></div>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+            {steps.map((step, index) => (
+              <div key={index} className="text-center relative">
+                {/* Step circle with number */}
+                <div className="relative mb-6">
+                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
+                    <span className="text-primary-foreground font-bold text-lg">{step.number}</span>
+                  </div>
+
+                  {/* Connecting line to next step (hidden on last step) */}
+                  {index < steps.length - 1 && (
+                    <div className="absolute top-8 left-1/2 w-full h-0.5 bg-primary hidden lg:block"></div>
+                  )}
+                </div>
+
+                <h3 className="font-semibold text-foreground mb-2 text-sm">{step.title}</h3>
+                <div className="text-xs text-muted-foreground">
+                  <p className="font-medium text-accent">{step.timeline}</p>
+                  {step.subtitle && <p>{step.subtitle}</p>}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      <div className="py-10">
+      <h2 className="text-center text-lg font-semibold mb-6">
+        Processing Timeline
+      </h2>
+
+      <div className="flex flex-wrap justify-center gap-6">
+        {psteps.map((step, index) => (
+          <div
+            key={index}
+            className="w-40 h-24 flex flex-col items-center justify-center bg-gray-100 rounded-xl shadow-sm"
+          >
+            <p className="text-blue-600 font-semibold text-lg">{step.time}</p>
+            <p className="text-gray-600 text-sm">{step.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+      </div>
+    </section>
+  )
+}
+
+
+
+
+
+
+
+
