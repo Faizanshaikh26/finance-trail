@@ -81,19 +81,19 @@ const Contact = () => {
                 <span className="text-gray-600">Saturday :</span> 9.00 AM - 6.00 PM
               </p>
               <p className="text-gray-600 ml-7 sm:ml-9 font-medium text-sm sm:text-base">
-                <span className="text-gray-600">Sunday : Closed</span>
+                <span className="text-gray-600">Sunday : <span className="text-black">Closed</span></span>
               </p>
             </div>
           </div>
 
           {/* RIGHT SIDE: CONTACT FORM */}
-          <div className="lg:col-span-3 bg-white rounded-2xl p-6 sm:p-8 md:p-10 border border-gray-200 shadow-sm">
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Send Us a Message</h2>
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl font-medium text-gray-500">
+          <div className="lg:col-span-3 bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+            <h2 className="text-2xl sm:text-2xl font-bold text-gray-900">Send Us a Message</h2>
+            <p className="mt-4 sm:mt-4 text-base sm:text-lg md:text-xl font-medium text-gray-500">
               Fill out the form below and we'll get back to you within 24 hours.
             </p>
 
-            <form action="#" method="POST" className="mt-6 sm:mt-8">
+            <form action="#" method="POST" className="mt-6 sm:mt-10 px-8">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-4 sm:gap-y-5">
                 {/* Full Name */}
                 <div>
@@ -160,10 +160,10 @@ const Contact = () => {
                   <select
                     id="service"
                     name="service"
-                    className="mt-1 block w-full rounded-md border-gray-300 bg-gray-50 shadow-sm 
+                    className="mt-1 block w-full rounded-md border-gray-300 bg-gray-50  text-gray-600 shadow-sm 
                     focus:border-indigo-500 focus:ring-indigo-500 text-sm sm:text-base py-2.5 sm:py-3 px-3 sm:px-4"
                   >
-                    <option>Select a service</option>
+                    <option className="">Select a service</option>
                   </select>
                 </div>
 

@@ -38,11 +38,11 @@ const services = [
 export default function ServicesSection() {
   return (
     <>
-      <div className="py-12 md:py-16  px-4 sm:px-32  bg-[#F2F2F2] lg:px-44 w-full">
+      <div className="py-12 md:py-16  px-4 sm:px-32   lg:px-44 w-full">
         {/* Section Header */}
         <div className=" mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-          <p className="text-gray-600 text-2xl  mx-auto">
+          <h2 className="text-4xl md:text-[50px] text-center font-bold text-gray-900 mb-4">Our Services</h2>
+          <p className="text-gray-600 text-center text-2xl  mx-auto">
             Comprehensive financial solutions designed to meet your unique needs and goals.
           </p>
         </div>
@@ -57,18 +57,18 @@ export default function ServicesSection() {
                 className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-shadow"
               >
                 {/* Icon */}
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-blue-600" />
+                <div className="w-12 h-12  rounded-lg flex items-center justify-center mb-4">
+                  <Icon className="w-[35px] h-[37px] text-[#3C50E9]" />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-2">{service.title}</h3>
 
                 {/* Description */}
-                <p className="text-gray-600 text-sm mb-4">{service.description}</p>
+                <p className="text-gray-600 text-lg mb-4">{service.description}</p>
 
                 {/* Button */}
-                <button className="px-4 py-2 text-sm font-medium rounded-lg border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white transition">
+                <button className="px-4 py-2 text-sm font-medium rounded-lg border border-blue-600 text-[#3C50E9] hover:bg-blue-600 hover:text-white transition">
                   Learn More
                 </button>
               </div>
@@ -137,7 +137,7 @@ const psteps = [
 
 export function ProcessSection() {
   return (
-    <section className="py-4 md:py-12 ">
+    <section className="py-4 md:py-12 bg-[#F2F2F2] ">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-foreground mb-4">Simple - 4-step Process</h2>
@@ -149,8 +149,8 @@ export function ProcessSection() {
 
         <div className="relative max-w-4xl mx-auto">
           {/* Progress line connecting all steps */}
-          <div className="absolute top-8 left-0 right-0 h-0.5 bg-primary/20 hidden lg:block">
-            <div className="h-full bg-primary w-3/4"></div>
+          <div className="absolute top-8 left-0 right-0 h-0.5 bg-[#3C50E9]/20 hidden lg:block">
+            <div className="h-full bg-[#3C50E9] w-3/4"></div>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
@@ -158,21 +158,18 @@ export function ProcessSection() {
               <div key={index} className="text-center relative">
                 {/* Step circle with number */}
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
-                    <span className="text-primary-foreground font-bold text-lg">{step.number}</span>
+                  <div className="w-16 h-16 bg-[#3C50E9] rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
+                  <span className="text-white font-bold text-lg">{step.number}</span>
                   </div>
 
                   {/* Connecting line to next step (hidden on last step) */}
                   {index < steps.length - 1 && (
-                    <div className="absolute top-8 left-1/2 w-full h-0.5 bg-primary hidden lg:block"></div>
+                    <div className="absolute top-8 left-1/2 w-full h-0.5 bg-[#3C50E9] hidden lg:block"></div>
                   )}
                 </div>
 
                 <h3 className="font-semibold text-foreground mb-2 text-sm">{step.title}</h3>
-                <div className="text-xs text-muted-foreground">
-                  <p className="font-medium text-accent">{step.timeline}</p>
-                  {step.subtitle && <p>{step.subtitle}</p>}
-                </div>
+                
               </div>
             ))}
           </div>
@@ -187,9 +184,9 @@ export function ProcessSection() {
         {psteps.map((step, index) => (
           <div
             key={index}
-            className="w-40 h-24 flex flex-col items-center justify-center bg-gray-100 rounded-xl shadow-sm"
+            className="w-40 h-24 flex flex-col items-center justify-center bg-white rounded-xl shadow-sm"
           >
-            <p className="text-blue-600 font-semibold text-lg">{step.time}</p>
+            <p className="text-[#3C50E9] font-semibold text-lg">{step.time}</p>
             <p className="text-gray-600 text-sm">{step.label}</p>
           </div>
         ))}

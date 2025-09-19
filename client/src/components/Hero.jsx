@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <>
       {/* Hero Section */}
-      <section className=" md:pt-40 pb-10 flex justify-center px-4 sm:px-32  lg:px-44 w-full  " style={{
+      <section className=" md:pt-40   pb-10 flex justify-center px-4 sm:px-32  lg:px-44 w-full  " style={{
         background: "linear-gradient(180deg, #D8F0FF 0%, #FFFFFF 100%)"
 
     }}>
@@ -15,28 +15,29 @@ const Hero = () => {
           {/* Left Content */}
           <div className="flex-1 text-center md:text-left">
             {/* Trusted Badge */}
-            <div className="inline-block mt-4 md:mt-0 :mb-6 bg-white border border-blue-200 text-blue-700 text-sm font-medium px-4 py-1 rounded-full shadow-sm">
-              ⭐ Trusted by 10,000+ Clients
+            <div className="inline-block mt-4 md:mt-0 mb-4 :mb-6 bg-white border border-blue-200 text-[#3C50E9] text-sm font-medium  md:px-4  rounded-full shadow-sm">
+             <span className="text-[12px]"> ⭐ Trusted by 10,000+ Clients</span>
             </div>
 
             {/* Heading */}
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight text-gray-900">
+            <h1 className="text-3xl sm:text-4xl md:text-7xl font-bold leading-tight text-gray-900">
               Your Financial <br />
-              <span className="text-blue-600">Future Starts Here</span>
+              <span>Future</span>
+              <span className="text-[#3C50E9]"> Starts Here</span>
             </h1>
 
             {/* Subtext */}
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-gray-700 max-w-xl mx-auto md:mx-0">
+            <p className="mt-4 sm:mt-6 text-base sm:text-2xl text-gray-700 max-w-xl mx-auto md:mx-0 font-normal">
               Empowering your financial journey with innovative solutions, expert
               guidance, and personalized services tailored for your success.
             </p>
 
             {/* Buttons */}
             <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <button className="flex items-center justify-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-700 transition">
+              <button className="flex items-center justify-center gap-2 bg-[#3C50E9] text-white px-6 py-3 rounded-full shadow-md hover:bg-blue-700 transition">
                 Get Started Today <ArrowRight size={18} />
               </button>
-              <button className="px-6 py-3 rounded-full border border-blue-600 text-blue-600 hover:bg-blue-100 transition">
+              <button className="px-6 py-3 rounded-full border border-blue-600 text-[#3C50E9] hover:bg-blue-100 transition">
                 Learn More
               </button>
             </div>
@@ -117,7 +118,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-8 sm:gap-12 mb-12">
           {/* Rating */}
           <div className="flex items-center gap-4">
-            <div className="bg-blue-600 text-white font-bold rounded-full w-[48px] h-[48px] flex items-center justify-center">
+            <div className="bg-[#3C50E9] text-white font-bold rounded-full w-[48px] h-[48px] flex items-center justify-center">
               4.9
             </div>
             <div className="flex flex-col items-center sm:items-start">
@@ -125,7 +126,7 @@ const Hero = () => {
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 fill-blue-600 mx-0.5"
+                    className="w-4 h-4 sm:w-5 sm:h-5 text-[#3C50E9] fill-blue-600 mx-0.5"
                   />
                 ))}
               </div>
@@ -135,8 +136,9 @@ const Hero = () => {
             </div>
           </div>
 
+
           {/* Experience */}
-          <div className="text-center sm:text-left">
+          <div className="text-center sm:text-left ">
             <p className="text-xl sm:text-2xl font-bold text-gray-900">10+</p>
             <p className="text-sm text-gray-600">Years Experience</p>
           </div>
@@ -152,10 +154,10 @@ const Hero = () => {
       {/* Core Values Section */}
       <section className="  px-4 sm:px-32  lg:px-44 w-full">
         <div className="mb-10 sm:mb-12 text-center ">
-          <h3 className="text-xl sm:text-2xl md:text-4xl py- font-bold text-gray-900">
+          <h3 className="text-xl sm:text-2xl md:text-[50px] py- font-bold text-gray-900">
             Our Core Values
           </h3>
-          <p className="text-gray-600 mt-3 text-base sm:text-xl  md:mx-0">
+          <p className="text-gray-600 mt-3 text-base sm:text-[25px]  md:mx-0">
             These principles guide everything we do and ensure we deliver
             exceptional value to our clients.
           </p>
@@ -164,8 +166,8 @@ const Hero = () => {
         {/* Values Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 place-items-center">
           {/* Card 1 */}
-          <div className="rounded-2xl w-full max-w-sm bg-white border border-gray-200 p-6 shadow-sm text-center hover:shadow-md transition">
-            <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600 mx-auto mb-4" />
+          <div className="rounded-2xl w-full max-w-sm  bg-white border border-gray-200 p-6 shadow-sm text-center hover:shadow-md transition">
+            <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-[#3C50E9] mx-auto mb-4" />
             <h4 className="font-semibold text-lg text-gray-900">
               Trust & Transparency
             </h4>
@@ -178,7 +180,7 @@ const Hero = () => {
 
           {/* Card 2 */}
           <div className="rounded-2xl w-full max-w-sm bg-white border border-gray-200 p-6 shadow-sm text-center hover:shadow-md transition">
-            <Handshake className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600 mx-auto mb-4" />
+            <Handshake className="w-8 h-8 sm:w-10 sm:h-10 text-[#3C50E9] mx-auto mb-4" />
             <h4 className="font-semibold text-lg text-gray-900">
               Excellence in Service
             </h4>
@@ -190,13 +192,13 @@ const Hero = () => {
 
           {/* Card 3 */}
           <div className="rounded-2xl w-full max-w-sm bg-white border border-gray-200 p-6 shadow-sm text-center hover:shadow-md transition">
-            <User className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600 mx-auto mb-4" />
+            <User className="w-8 h-8 sm:w-10 sm:h-10 text-[#3C50E9] mx-auto mb-4" />
             <h4 className="font-semibold text-lg text-gray-900">
               Client-Centric Approach
             </h4>
             <p className="text-sm text-gray-600 mt-2">
               Every decision we make is centered around our clients' best
-              interests and long-term financial success.
+              interests and long-term financial
             </p>
           </div>
         </div>

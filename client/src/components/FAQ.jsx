@@ -110,7 +110,7 @@ const FAQ = () => {
               className="px-4 sm:px-6 py-4 sm:py-6 flex justify-between items-center cursor-pointer hover:bg-gray-200 transition rounded-2xl"
               onClick={() => toggleFAQ(i)}
             >
-              <span className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 font-medium">
+              <span className="text-base sm:text-lg md:text-xl lg:text-xl text-gray-600 font-medium">
                 {faq.question}
               </span>
               <ChevronDown

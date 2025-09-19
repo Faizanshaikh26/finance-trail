@@ -14,10 +14,10 @@ const About = () => {
        items-center">
                 {/* Left Content */}
                 <div>
-                    <h2 className="text-2xl md:text-3xl font-bold mb-4">
-                        About <span className="text-blue-600">Bharath Kapital?</span>
+                    <h2 className="text-2xl md:text-[50px] font-bold mb-4">
+                        About <span className="text-[#3C50E9]">Bharath Kapital?</span>
                     </h2>
-                    <p className="mb-4 text-black">
+                    <p className="mb-4 text-black  text-xl ">
                         For over a decade, Bharath Kapital has been dedicated to delivering
                         personalized financial solutions that empower individuals and
                         businesses to achieve their dreams with confidence. With ₹2.5Cr+ in
@@ -25,7 +25,7 @@ const About = () => {
                         our journey reflects the trust, loyalty, and success we’ve built
                         together.
                     </p>
-                    <p className="text-black">
+                    <p className="text-black md:text-xl">
                         Backed by 10 years of proven expertise, Bharath Kapital continues to
                         stand for transparency, innovation, and client-centricity. As we move
                         forward, our mission remains clear—to guide every client toward
@@ -45,7 +45,7 @@ const About = () => {
             </section>
 
             {/* Stats */}
-            <div className="max-w-6xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-4 text-center pb-12">
+            <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-[64px] text-center pb-12">
                 {[
                     { value: "10+", label: "Years Experience" },
                     { value: "₹2.5Cr+", label: "Assets Managed" },
@@ -54,22 +54,22 @@ const About = () => {
                 ].map((item, i) => (
                     <div
                         key={i}
-                        className="bg-sky-100 p-6 rounded-lg shadow-sm"
+                        className="bg-[#EEF4F8] p-6 rounded-lg shadow-sm"
                     >
-                        <h3 className="text-xl font-bold text-blue-600">{item.value}</h3>
-                        <p className="text-sm text-gray-600">{item.label}</p>
+                        <h3 className="text-[40px] font-bold text-[#3C50E9]">{item.value}</h3>
+                        <p className="text-[18px] font-semibold text-gray-600">{item.label}</p>
                     </div>
                 ))}
             </div>
 
             {/* Why Choose Section */}
-            <section className="bg-[#] py-4 md:py-10">
+            <section className=" py-4 md:py-10 bg-[#f2f2f2]">
                 <div className="max-w-6xl mx-auto px-6">
-                    <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
-                        Why Choose <span className="text-blue-600">Bharath Kapital?</span>
+                    <h2 className="text-2xl md:text-[50px] font-bold text-center mb-10">
+                        Why Choose <span className="text-[#3C50E9]">Bharath Kapital?</span>
                     </h2>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-[60px] text-center">
                         {[
                             {
                                 img: <VscWorkspaceTrusted />,
@@ -106,9 +106,9 @@ const About = () => {
                                 key={i}
                                 className="bg-white rounded-xl shadow-sm p-6 flex flex-col items-center"
                             >
-                                <div className="text-blue-600 text-3xl mb-4 justify-items-center">{item.img}</div>
-                                <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
-                                <p className="text-gray-600 text-sm">{item.desc}</p>
+                                <div className="text-[#3C50E9] text-4xl mb-4 justify-items-center">{item.img}</div>
+                                <h3 className="font-semibold text-xl mb-2">{item.title}</h3>
+                                <p className="text-gray-600 text-lg">{item.desc}</p>
                             </div>
                         ))}
                     </div>

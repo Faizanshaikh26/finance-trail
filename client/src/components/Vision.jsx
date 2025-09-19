@@ -33,7 +33,7 @@ const Vision = () => {
             />
           </div>
           <div>
-            <h3 className="mb-4 text-xl sm:text-2xl font-bold text-blue-600 text-center md:text-left">
+            <h3 className="mb-4 text-xl sm:text-2xl font-bold text-[#3C50E9] text-center md:text-left">
               Our Vision
             </h3>
             <p className="text-gray-800 text-base sm:text-lg md:text-lg leading-relaxed text-center md:text-left">
@@ -47,7 +47,7 @@ const Vision = () => {
         {/* Mission */}
         <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
           <div className="order-2 md:order-1">
-            <h3 className="mb-4 text-xl sm:text-2xl font-bold text-blue-600 text-center md:text-left">
+            <h3 className="mb-4 text-xl sm:text-2xl font-bold text-[#3C50E9] text-center md:text-left">
               Our Mission
             </h3>
             <p className="text-gray-800 text-base sm:text-lg md:text-lg leading-relaxed text-center md:text-left">
@@ -84,7 +84,7 @@ const Vision = () => {
               key={index}
               className="bg-white rounded-xl shadow-sm p-4 sm:p-6 flex flex-col items-center hover:shadow-md transition"
             >
-              <IoMdCheckmarkCircleOutline className="text-blue-600 w-10 h-10 mb-2 sm:mb-4" />
+              <IoMdCheckmarkCircleOutline className="text-[#3C50E9] w-10 h-10 mb-2 sm:mb-4" />
               <h4 className="font-semibold text-gray-800 text-lg">{cert.title}</h4>
               <p className="text-sm text-gray-600">{cert.desc}</p>
               <p className="text-sm text-gray-600">{cert.descs}</p>
@@ -94,17 +94,17 @@ const Vision = () => {
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mt-10 sm:mt-12 bg-white shadow-sm rounded-xl max-w-3xl mx-auto p-4 sm:p-6">
           <div className="flex flex-col items-center text-center">
-            <p className="text-blue-600 font-bold text-xl sm:text-2xl">100%</p>
+            <p className="text-[#3C50E9] font-bold text-xl sm:text-2xl">100%</p>
             <p className="text-sm sm:text-base text-gray-600">Regulatory Compliant</p>
           </div>
           <div className="hidden sm:block h-10 border-l border-gray-300"></div>
           <div className="flex flex-col items-center text-center">
-            <p className="text-blue-600 font-bold text-xl sm:text-2xl">24/7</p>
+            <p className="text-[#3C50E9] font-bold text-xl sm:text-2xl">24/7</p>
             <p className="text-sm sm:text-base text-gray-600">Customer Support</p>
           </div>
           <div className="hidden sm:block h-10 border-l border-gray-300"></div>
           <div className="flex flex-col items-center text-center">
-            <p className="text-blue-600 font-bold text-xl sm:text-2xl">256-bit</p>
+            <p className="text-[#3C50E9] font-bold text-xl sm:text-2xl">256-bit</p>
             <p className="text-sm sm:text-base text-gray-600">SSL Encryption</p>
           </div>
         </div>
@@ -118,7 +118,7 @@ const Vision = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto px-2 sm:px-4">
           {/* Testimonial 1 */}
           <div className="bg-[#F9F9F9] rounded-2xl shadow-sm p-4 sm:p-6 flex flex-col gap-3 sm:gap-4">
-            <FaQuoteLeft className="text-blue-600 text-xl sm:text-2xl" />
+            <FaQuoteLeft className="text-[#3C50E9] text-xl sm:text-5xl" />
             <p className="text-gray-700 text-sm sm:text-base">
               "Bharath Kapital helped me secure a business loan that transformed my company.
               Their professional guidance and quick approval process made all the difference."
@@ -131,7 +131,7 @@ const Vision = () => {
 
           {/* Testimonial 2 */}
           <div className="bg-[#F9F9F9] rounded-2xl shadow-sm p-4 sm:p-6 flex flex-col gap-3 sm:gap-4">
-            <FaQuoteLeft className="text-blue-600 text-xl sm:text-2xl" />
+            <FaQuoteLeft className="text-[#3C50E9] text-xl sm:text-5xl" />
             <p className="text-gray-700 text-sm sm:text-base">
               "Getting our home loan was seamless with their team. They explained everything
               clearly and found us the best rates. Highly recommend their services."
@@ -144,7 +144,7 @@ const Vision = () => {
 
           {/* Testimonial 3 */}
           <div className="bg-[#F9F9F9] rounded-2xl shadow-sm p-4 sm:p-6 flex flex-col gap-3 sm:gap-4">
-            <FaQuoteLeft className="text-blue-600 text-xl sm:text-2xl" />
+            <FaQuoteLeft className="text-[#3C50E9] text-xl sm:text-5xl" />
             <p className="text-gray-700 text-sm sm:text-base">
               "Bharath Kapital’s expertise gave me the confidence to invest wisely.
               Their team is knowledgeable and approachable."
