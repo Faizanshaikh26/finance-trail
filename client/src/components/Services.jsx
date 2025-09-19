@@ -137,7 +137,7 @@ const psteps = [
 
 export function ProcessSection() {
   return (
-    <section className="md:py-12 ">
+    <section className="py-4 md:py-12 ">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-foreground mb-4">Simple - 4-step Process</h2>
@@ -178,7 +178,7 @@ export function ProcessSection() {
           </div>
         </div>
 
-      <div className="md:py-10">
+      <div className="py-6 md:py-10">
       <h2 className="text-center text-lg font-semibold mb-6">
         Processing Timeline
       </h2>

@@ -63,7 +63,7 @@ const About = () => {
             </div>
 
             {/* Why Choose Section */}
-            <section className="bg-[#] py-12">
+            <section className="bg-[#] py-4 md:py-10">
                 <div className="max-w-6xl mx-auto px-6">
                     <h2 className="text-2xl md:text-3xl font-bold text-center mb-10">
                         Why Choose <span className="text-blue-600">Bharath Kapital?</span>
