@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight, Star, TrendingUp } from "lucide-react";
 import { Shield, Handshake, User } from "lucide-react";
-import hero from "../assets/hero.png";
+import hero from "../assets/hero2.png";
 
 const Hero = () => {
   return (
@@ -42,26 +42,62 @@ const Hero = () => {
             </div>
           </div>
 
+     
           {/* Right Content - Image with Floating Cards */}
-          <div className="flex-1 relative  flex justify-center">
-            <img
-              src={hero}
-              alt="Businessman"
-              className="max-w-[250px] sm:max-w-sm md:max-w-lg w-full h-auto"
-            />
+<div className="flex-1 flex justify-center items-center">
+  <div className="relative w-fit">
+    {/* Main Image */}
+    <img
+      src={hero}
+      alt="Businessman"
+      className="max-w-[250px] sm:max-w-sm md:max-w-lg w-full h-auto relative z-10"
+    />
 
-            {/* Floating Card - Balance */}
-            <div className="absolute top-6 sm:top-10 left-6 sm:left-[120px] bg-white text-center w-[110px] sm:w-[140px] rounded-xl shadow-md text-xs sm:text-sm py-2">
-              <p className="text-gray-600">Your Balance</p>
-              <p className="text-green-600 font-semibold">2,50,000</p>
-            </div>
 
-            {/* Floating Card - Status */}
-            <div className="absolute bottom-6 sm:top-[180px] right-6 sm:right-[90px] bg-white flex flex-col items-center justify-center w-[100px] sm:w-[130px] h-[50px] sm:h-[60px] rounded-full shadow-md text-xs sm:text-sm">
-              <p className="text-gray-700 font-medium">Status</p>
-              <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mt-1" />
-            </div>
-          </div>
+<div className="hidden md:block">
+<div className="absolute top-[30%] z-20 left-2 sm:left-12 bg-white rounded-xl shadow-md px-3 sm:px-4 py-2 sm:py-3 min-w-[140px]">
+      <p className="text-green-600 font-semibold text-sm sm:text-base">
+        + ₹15,000
+      </p>
+      <p className="text-gray-600 text-xs sm:text-sm">Received from Rajesh</p>
+    </div>
+
+    {/* Card 2 - Balance */}
+    <div className="absolute top-[50%] z-20  sm:left-24 bg-white rounded-xl shadow-md px-3 sm:px-  min-w-[120px]">
+      <p className="text-gray-600 text-xs sm:text-sm">Your Balance</p>
+      <p className="text-green-600 font-semibold text-sm sm:text-base">
+        ₹ 2,50,000
+      </p>
+    </div>
+
+    {/* Card 3 - Status with Chart */}
+    <div className="absolute top-[120px] z-30 right-2 sm:right-[-40px] bg-white rounded-xl shadow-md px-3 sm:px-4 py-2 sm:py-3 min-w-[150px]">
+      <p className="text-gray-600 text-xs sm:text-sm mb-1">Status</p>
+      <img
+        src="https://quickchart.io/chart?c={type:'line',data:{labels:[1,2,3,4,5],datasets:[{data:[10,20,15,25,30],borderColor:'red',fill:false}]}}"
+        alt="status chart"
+        className="w-full h-12 sm:h-14 object-cover"
+      />
+    </div>
+
+    {/* Card 4 - Balance with Bar Chart */}
+    <div className="absolute -bottom-[1px] right-0 z-20 sm:right-[30px] bg-white rounded-xl shadow-md px-3 sm:px-4 py-2 sm:py-3 min-w-[180px]">
+      <p className="text-gray-600 text-xs sm:text-sm">Your Balance</p>
+      <p className="text-green-600 font-semibold text-sm sm:text-base">
+        ₹ 2,50,000 + 15%
+      </p>
+      <img
+        src="https://quickchart.io/chart?c={type:'bar',data:{labels:['S','M','T','W','T','F','S'],datasets:[{data:[50,100,80,200,150,90,120],backgroundColor:'blue'}]}}"
+        alt="bar chart"
+        className="w-full h-16 sm:h-14 object-cover mt-2"
+      />
+    </div>
+</div>
+    {/* Card 1 - Transaction */}
+    
+  </div>
+</div>
+
         </div>
       </section>
 

@@ -6,6 +6,8 @@ import Services from './components/Services'
 import { Footer } from './components/Footer'
 import About from './components/About'
 import Vision from './components/Vision'
+import FAQ from './components/FAQ'
+import Contact from './components/Contact'
 
 
 export default function Home() {
@@ -22,6 +24,9 @@ export default function Home() {
 
         <Vision/>
      
+     <FAQ/>
+
+     <Contact/>
        
         <Footer/>
     </div>
