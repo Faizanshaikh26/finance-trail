@@ -23,3 +23,11 @@
   --color-primaryCardText: #1E293B;
 
 }
+
+
+
+body {
+
+  scroll-behavior: smooth;
+
+}
