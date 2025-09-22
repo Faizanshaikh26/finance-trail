@@ -1,99 +1,143 @@
-import React from "react";
-import {
-  Home,
-  Building2,
-  User,
-  TrendingUp,
-  Shield,
-  PiggyBank,
-  Search,
-  Banknote,
-  FileText,
-  FileCheck,
-  CheckCircle,
-  Wallet,
-} from "lucide-react";
-import { motion } from "framer-motion";
+import React from "react"
+import { Home, Building2, User, TrendingUp, Shield, PiggyBank, Search, Banknote } from "lucide-react"
+import { FileText, FileCheck, CheckCircle, Wallet } from "lucide-react"
 
 const services = [
-  { icon: Home, title: "Home Loans", description: "Affordable home financing with flexible terms and fast approval" },
-  { icon: Building2, title: "Business Loans", description: "Customized funding and expert support to expand your business." },
-  { icon: User, title: "Personal Loans", description: "Instant personal funds with easy paperwork and quick disbursal." },
-  { icon: TrendingUp, title: "Investment Advisory", description: "Professional investment strategies to grow and protect your wealth." },
-  { icon: Shield, title: "Insurance", description: "Reliable coverage to safeguard your family and assets." },
-  { icon: PiggyBank, title: "Savings Plans", description: "Goal-oriented savings and fixed deposits with competitive returns." },
-];
+  {
+    icon: Home,
+    title: "Home Loans",
+    description: "Affordable home financing with flexible terms and fast approval",
+  },
+  {
+    icon: Building2,
+    title: "Business Loans",
+    description: "Customized funding and expert support to expand your business.",
+  },
+  {
+    icon: User,
+    title: "Personal Loans",
+    description: "Instant personal funds with easy paperwork and quick disbursal.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Investment Advisory",
+    description: "Professional investment strategies to grow and protect your wealth.",
+  },
+  {
+    icon: Shield,
+    title: "Insurance",
+    description: "Reliable coverage to safeguard your family and assets.",
+  },
+  {
+    icon: PiggyBank,
+    title: "Savings Plans",
+    description: "Goal-oriented savings and fixed deposits with competitive returns.",
+  },
+]
 
 export default function ServicesSection() {
   return (
     <>
-      <div className="py-12 md:py-16 px-4 sm:px-32 lg:px-44 w-full" id="services">
+      <div className="py-12 md:py-16  px-4 sm:px-32   lg:px-44 w-full">
         {/* Section Header */}
-        <div className="mb-12">
+        <div className=" mb-12">
           <h2 className="text-4xl md:text-[50px] text-center font-bold text-gray-900 mb-4">Our Services</h2>
-          <p className="text-gray-600 text-center text-2xl mx-auto">
+          <p className="text-gray-600 text-center text-2xl  mx-auto">
             Comprehensive financial solutions designed to meet your unique needs and goals.
           </p>
         </div>
 
         {/* Services Grid */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: false, amount: 0.3 }}
-          variants={{
-            hidden: {},
-            show: { transition: { staggerChildren: 0.2 } },
-          }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
-            const Icon = service.icon;
+            const Icon = service.icon
             return (
-              <motion.div
+              <div
                 key={index}
                 className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-shadow"
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-                }}
               >
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                {/* Icon */}
+                <div className="w-12 h-12  rounded-lg flex items-center justify-center mb-4">
                   <Icon className="w-[35px] h-[37px] text-[#3C50E9]" />
                 </div>
+
+                {/* Title */}
                 <h3 className="text-2xl font-semibold text-gray-900 mb-2">{service.title}</h3>
+
+                {/* Description */}
                 <p className="text-gray-600 text-lg mb-4">{service.description}</p>
+
+                {/* Button */}
                 <button className="px-4 py-2 text-sm font-medium rounded-lg border border-blue-600 text-[#3C50E9] hover:bg-blue-600 hover:text-white transition">
                   Learn More
                 </button>
-              </motion.div>
-            );
+              </div>
+            )
           })}
-        </motion.div>
+        </div>
       </div>
 
-      <ProcessSection />
-    </>
-  );
+<ProcessSection/>
+
+</>
+ 
+ 
+  )
 }
 
-// Process Section
+
+
+
+
+
+
+
+
+
+
 const steps = [
-  { number: "1", icon: FileText, title: "Submit Application", timeline: "24-48 hrs", subtitle: "Initial Approve" },
-  { number: "2", icon: Search, title: "Document Review", timeline: "3-7 days", subtitle: "Documentation" },
-  { number: "3", icon: CheckCircle, title: "Approval & verification", timeline: "Processing Timeline", subtitle: "" },
-  { number: "4", icon: Banknote, title: "Disbursement", timeline: "7-15 days", subtitle: "Final Disbursement" },
-];
+  {
+    number: "1",
+    icon: FileText,
+    title: "Submit Application",
+    timeline: "24-48 hrs",
+    subtitle: "Initial Approve",
+  },
+  {
+    number: "2",
+    icon: Search,
+    title: "Document Review",
+    timeline: "3-7 days",
+    subtitle: "Documentation",
+  },
+  {
+    number: "3",
+    icon: CheckCircle,
+    title: "Approval & verification",
+    timeline: "Processing Timeline",
+    subtitle: "",
+  },
+  {
+    number: "4",
+    icon: Banknote,
+    title: "Disbursement",
+    timeline: "7-15 days",
+    subtitle: "Final Disbursement",
+  },
+]
+
 
 const psteps = [
-  { time: "24-48 hrs", label: "Initial Approve" },
-  { time: "3-7 days", label: "Documentation" },
-  { time: "7-15 days", label: "Final Disbursement" },
-];
+    { time: "24-48 hrs", label: "Initial Approve" },
+    { time: "3-7 days", label: "Documentation" },
+    { time: "7-15 days", label: "Final Disbursement" },
+  ];
+
+
 
 export function ProcessSection() {
   return (
-    <section className="py-4 md:py-12 bg-[#F2F2F2]">
+    <section className="py-4 md:py-12 bg-[#F2F2F2] ">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-foreground mb-4">Simple - 4-step Process</h2>
@@ -104,53 +148,60 @@ export function ProcessSection() {
         </div>
 
         <div className="relative max-w-4xl mx-auto">
+          {/* Progress line connecting all steps */}
           <div className="absolute top-8 left-0 right-0 h-0.5 bg-[#3C50E9]/20 hidden lg:block">
             <div className="h-full bg-[#3C50E9] w-3/4"></div>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {steps.map((step, index) => (
-              <motion.div
-                key={index}
-                className="text-center relative"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
-                viewport={{ once: false, amount: 0.3 }}
-              >
+              <div key={index} className="text-center relative">
+                {/* Step circle with number */}
                 <div className="relative mb-6">
                   <div className="w-16 h-16 bg-[#3C50E9] rounded-full flex items-center justify-center mx-auto mb-4 relative z-10">
-                    <span className="text-white font-bold text-lg">{step.number}</span>
+                  <span className="text-white font-bold text-lg">{step.number}</span>
                   </div>
+
+                  {/* Connecting line to next step (hidden on last step) */}
                   {index < steps.length - 1 && (
                     <div className="absolute top-8 left-1/2 w-full h-0.5 bg-[#3C50E9] hidden lg:block"></div>
                   )}
                 </div>
+
                 <h3 className="font-semibold text-foreground mb-2 text-sm">{step.title}</h3>
-              </motion.div>
+                
+              </div>
             ))}
           </div>
         </div>
 
-        <div className="py-6 md:py-10">
-          <h2 className="text-center text-lg font-semibold mb-6">Processing Timeline</h2>
-          <div className="flex flex-wrap justify-center gap-6">
-            {psteps.map((step, index) => (
-              <motion.div
-                key={index}
-                className="w-40 h-24 flex flex-col items-center justify-center bg-white rounded-xl shadow-sm"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: index * 0.2 }}
-                viewport={{ once: false, amount: 0.3 }}
-              >
-                <p className="text-[#3C50E9] font-semibold text-lg">{step.time}</p>
-                <p className="text-gray-600 text-sm">{step.label}</p>
-              </motion.div>
-            ))}
+      <div className="py-6 md:py-10">
+      <h2 className="text-center text-lg font-semibold mb-6">
+        Processing Timeline
+      </h2>
+
+      <div className="flex flex-wrap justify-center gap-6">
+        {psteps.map((step, index) => (
+          <div
+            key={index}
+            className="w-40 h-24 flex flex-col items-center justify-center bg-white rounded-xl shadow-sm"
+          >
+            <p className="text-[#3C50E9] font-semibold text-lg">{step.time}</p>
+            <p className="text-gray-600 text-sm">{step.label}</p>
           </div>
-        </div>
+        ))}
+      </div>
+    </div>
+
       </div>
     </section>
-  );
+  )
 }
+
+
+
+
+
+
+
+

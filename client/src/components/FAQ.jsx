@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { motion } from "framer-motion";
 
 const faqs = [
   {
@@ -95,37 +94,18 @@ const FAQ = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center" id="contact">
-      <motion.h2
-        className="text-2xl sm:text-4xl md:text-5xl font-semibold text-gray-900 mb-6 sm:mb-10"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: false, amount: 0.3 }}
-      >
+    <div className="max-w-6xl mx-auto px-4 sm:px-6  text-center">
+      <h2 className="text-2xl sm:text-4xl md:text-5xl font-semibold text-gray-900 mb-6 sm:mb-10">
         Frequently Asked Questions
-      </motion.h2>
-      <motion.p
-        className="text-base sm:text-xl md:text-2xl font-medium text-gray-600 mb-8 sm:mb-12"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        viewport={{ once: false, amount: 0.3 }}
-      >
+      </h2>
+      <p className="text-base sm:text-xl md:text-2xl font-medium text-gray-600 mb-8 sm:mb-12">
         Get answers to common questions about our financial services, <br className="hidden sm:block" />
         loan processes, and investment solutions.
-      </motion.p>
+      </p>
 
       <div className="space-y-4 text-left">
         {faqs.map((faq, i) => (
-          <motion.div
-            key={i}
-            className="bg-gray-100 rounded-2xl"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: i * 0.1 }}
-            viewport={{ once: false, amount: 0.3 }}
-          >
+          <div key={i} className="bg-gray-100 rounded-2xl">
             <div
               className="px-4 sm:px-6 py-4 sm:py-6 flex justify-between items-center cursor-pointer hover:bg-gray-200 transition rounded-2xl"
               onClick={() => toggleFAQ(i)}
@@ -139,10 +119,11 @@ const FAQ = () => {
                 }`}
               />
             </div>
-            <motion.div
-              className="overflow-hidden"
-              animate={{ maxHeight: openIndex === i ? "1000px" : "0px" }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
+
+            <div
+              className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                openIndex === i ? "max-h-screen" : "max-h-0"
+              }`}
             >
               <hr className="border-gray-300 mx-4 sm:mx-6" />
               <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-3 sm:pt-4">
@@ -150,8 +131,8 @@ const FAQ = () => {
                   {faq.answer}
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         ))}
       </div>
     </div>

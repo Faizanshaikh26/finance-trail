@@ -12,23 +12,24 @@ import Contact from './components/Contact'
 
 export default function Home() {
   return (
-    <div className='  w-full'>
+    <div  className='max-w-full  ' >
+  
 
-        <Navbar/>
+      <Navbar />
 
-       
- <Hero/>
 
- <About/>
-        <Services/>
+      <Hero />
 
-        <Vision/>
-     
-     <FAQ/>
+      <About />
+      <Services />
 
-     <Contact/>
-       
-        <Footer/>
+      <Vision />
+
+      <FAQ />
+
+      <Contact />
+
+      <Footer />
     </div>
   )
 }

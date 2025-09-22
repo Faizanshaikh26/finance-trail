@@ -4,23 +4,14 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-   const navLinks = [
-    { name: "Home", path: "#home" },
-    { name: "About", path: "#about" },
-    { name: "Services", path: "#services" },
-    { name: "Vision", path: "#vision" },
-    { name: "Contact", path: "#contact" },
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Vision", path: "/vision" },
+    { name: "Services", path: "/services" },
+    { name: "Contact", path: "/contact" },
   ];
 
-
-    const handleScroll = (e, id) => {
-    e.preventDefault();
-    const section = document.querySelector(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-    setMenuOpen(false);
-  };
   return (
     <>
       {/* Fixed Navbar */}
@@ -52,13 +43,18 @@ const Navbar = () => {
           <ul className="hidden lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
             {navLinks.map((link, idx) => (
               <li key={idx}>
-               <a
-                  href={link.path}
-                  onClick={(e) => handleScroll(e, link.path)}
-                  className="text-sm font-semibold text-gray-600 hover:text-blue-600 cursor-pointer"
+                <NavLink
+                  to={link.path}
+                  className={({ isActive }) =>
+                    `text-sm font-semibold transition ${
+                      isActive
+                        ? "text-blue-600 border-b-2 border-blue-600"
+                        : "text-gray-400 hover:text-gray-500"
+                    }`
+                  }
                 >
                   {link.name}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
@@ -121,19 +117,19 @@ const Navbar = () => {
               <ul>
                 {navLinks.map((link, idx) => (
                   <li key={idx} className="mb-1">
-                   <a
-  href={link.path}
-  onClick={(e) => {
-    handleScroll(e, link.path);
-    setMenuOpen(false);
-  }}
-  className="text-sm font-semibold text-gray-600 hover:text-blue-600 cursor-pointer"
->
-  {link.name}
-</a>
-
-
-                  
+                    <NavLink
+                      to={link.path}
+                      className={({ isActive }) =>
+                        `block p-4 text-sm font-semibold rounded transition ${
+                          isActive
+                            ? "bg-blue-50 text-blue-600"
+                            : "text-gray-400 hover:bg-blue-50 hover:text-blue-600"
+                        }`
+                      }
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      {link.name}
+                    </NavLink>
                   </li>
                 ))}
               </ul>
