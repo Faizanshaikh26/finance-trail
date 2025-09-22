@@ -1,0 +1,36 @@
+
+import { useEffect } from "react";
+import Lenis from "@studio-freight/lenis";
+
+export default function LenisScroll() {
+  useEffect(() => {
+    // const lenis = new Lenis({
+    //   duration: 1.2,
+    //   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    //   smoothWheel: true,
+    //   smoothTouch: false,
+    // });
+
+    const lenis = new Lenis({
+  duration: 1.8,
+  easing: (t) => 1 - Math.pow(1 - t, 3),
+  smoothWheel: true,
+  smoothTouch: true, // also smooth on touch devices
+  lerp: 0.07,
+});
+
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
+  return null; 
+}
