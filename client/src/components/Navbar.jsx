@@ -1,26 +1,39 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import Logo from  '../assets/logo.png'
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const navLinks = [
-    { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Vision", path: "/vision" },
-    { name: "Services", path: "/services" },
-    { name: "Contact", path: "/contact" },
+   const navLinks = [
+    { name: "Home", path: "#home" },
+    { name: "About", path: "#about" },
+    { name: "Services", path: "#services" },
+    { name: "Vision", path: "#vision" },
+    { name: "Contact", path: "#contact" },
   ];
 
+
+    const handleScroll = (e, id) => {
+    e.preventDefault();
+    const section = document.querySelector(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    setMenuOpen(false);
+  };
   return (
     <>
       {/* Fixed Navbar */}
       <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
-        <nav className="relative px-4 py-4 flex justify-between items-center">
+        <nav className="relative px-4 md:px-20 py-4 flex justify-between items-center">
           {/* Logo */}
-          <NavLink to="/" className="text-2xl font-bold text-blue-600">
-            Logo
+
+          <div className="w-[120px]">
+ <NavLink to="/">
+            <img src={Logo} alt="Logo" className="w-full" />
           </NavLink>
+          </div>
+         
 
           {/* Burger Icon (Mobile) */}
           <div className="lg:hidden">
@@ -43,18 +56,13 @@ const Navbar = () => {
           <ul className="hidden lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
             {navLinks.map((link, idx) => (
               <li key={idx}>
-                <NavLink
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `text-sm font-semibold transition ${
-                      isActive
-                        ? "text-blue-600 border-b-2 border-blue-600"
-                        : "text-gray-400 hover:text-gray-500"
-                    }`
-                  }
+               <a
+                  href={link.path}
+                  onClick={(e) => handleScroll(e, link.path)}
+                  className="text-sm font-semibold text-gray-600 hover:text-blue-600 cursor-pointer"
                 >
                   {link.name}
-                </NavLink>
+                </a>
               </li>
             ))}
           </ul>
@@ -117,19 +125,19 @@ const Navbar = () => {
               <ul>
                 {navLinks.map((link, idx) => (
                   <li key={idx} className="mb-1">
-                    <NavLink
-                      to={link.path}
-                      className={({ isActive }) =>
-                        `block p-4 text-sm font-semibold rounded transition ${
-                          isActive
-                            ? "bg-blue-50 text-blue-600"
-                            : "text-gray-400 hover:bg-blue-50 hover:text-blue-600"
-                        }`
-                      }
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      {link.name}
-                    </NavLink>
+                   <a
+  href={link.path}
+  onClick={(e) => {
+    handleScroll(e, link.path);
+    setMenuOpen(false);
+  }}
+  className="text-sm font-semibold text-gray-600 hover:text-blue-600 cursor-pointer"
+>
+  {link.name}
+</a>
+
+
+                  
                   </li>
                 ))}
               </ul>
