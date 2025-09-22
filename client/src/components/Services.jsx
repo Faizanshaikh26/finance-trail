@@ -12,17 +12,18 @@ import {
   FileCheck,
   CheckCircle,
   Wallet,
+  Car,
 } from "lucide-react";
 import { motion } from "framer-motion";
-
 const services = [
-  { icon: Home, title: "Home Loans", description: "Affordable home financing with flexible terms and fast approval" },
-  { icon: Building2, title: "Business Loans", description: "Customized funding and expert support to expand your business." },
   { icon: User, title: "Personal Loans", description: "Instant personal funds with easy paperwork and quick disbursal." },
-  { icon: TrendingUp, title: "Investment Advisory", description: "Professional investment strategies to grow and protect your wealth." },
-  { icon: Shield, title: "Insurance", description: "Reliable coverage to safeguard your family and assets." },
-  { icon: PiggyBank, title: "Savings Plans", description: "Goal-oriented savings and fixed deposits with competitive returns." },
+  { icon: Building2, title: "Industrial Finance", description: "Financial solutions tailored for industries to scale operations efficiently." },
+  { icon: Shield, title: "Private Finance", description: "Flexible and reliable private financing options for urgent needs." },
+  { icon: Home, title: "Loan Against Property (LAP)", description: "Unlock the value of your property to access larger funds at lower interest rates." },
+  { icon: Car, title: "Vehicle Loans", description: "Quick and affordable loans for cars, bikes, and commercial vehicles." },
+  { icon: PiggyBank, title: "Gold Loans", description: "Get instant funds by leveraging your gold assets with minimal documentation." },
 ];
+
 
 export default function ServicesSection() {
   return (

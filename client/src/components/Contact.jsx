@@ -52,8 +52,8 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold text-gray-800">Phone</h3>
               </div>
               <p className="text-gray-600 mt-2 ml-7 text-sm sm:text-base">Call us during business hours</p>
-              <p className="text-gray-800 mt-1 ml-7 font-medium">+91 9898 911230‬</p>
-              <p className="text-gray-800 ml-7 font-medium">+91 81234 98765‬</p>
+              <p className="text-gray-800 mt-1 ml-7 font-medium">+91 7276317098</p>
+            
             </motion.div>
 
             {/* Email */}
@@ -66,8 +66,8 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold text-gray-800">Email</h3>
               </div>
               <p className="text-gray-600 mt-2 ml-7 text-sm sm:text-base">Send us a message anytime</p>
-              <p className="text-gray-800 mt-1 ml-7 font-medium">info@bharathkapital12.com</p>
-              <p className="text-gray-800 ml-7 font-medium">support@bharathkapital12.com</p>
+      
+              <p className="text-gray-800 ml-7 font-medium">support@bharathkapital.com</p>
             </motion.div>
 
             {/* Address */}
@@ -81,8 +81,12 @@ const Contact = () => {
               </div>
               <p className="text-gray-600 mt-2 ml-7 text-sm sm:text-base">Visit our office</p>
               <p className="text-gray-800 mt-1 ml-7 font-medium">
-                131, Mayur Colony, Kothrud,
-                <br /> Pune, Maharashtra 411038
+                4th Floor,
+
+Elpro City Mall
+
+
+                <br /> Chinchwad - 411033
               </p>
             </motion.div>
 
@@ -96,10 +100,10 @@ const Contact = () => {
                 <h3 className="text-lg font-semibold text-gray-800">Business Hours</h3>
               </div>
               <p className="text-gray-800 mt-2 ml-7 font-medium text-sm sm:text-base">
-                <span className="text-gray-600">Mon - Fri :</span> 9.00 AM - 6.00 PM
+                <span className="text-gray-600">Mon - Fri :</span> 10.00 AM - 6.00 PM
               </p>
               <p className="text-gray-800 ml-7 font-medium text-sm sm:text-base">
-                <span className="text-gray-600">Saturday :</span> 9.00 AM - 6.00 PM
+                <span className="text-gray-600">Saturday :</span> 10.00 AM - 4.00 PM
               </p>
               <p className="text-gray-600 ml-7 font-medium text-sm sm:text-base">
                 <span className="text-gray-600">Sunday : <span className="text-black">Closed</span></span>

@@ -1,6 +1,14 @@
 import { Facebook, Twitter } from "lucide-react"
-
+import { Link } from "react-router-dom"
 export function Footer() {
+
+   const handleScroll = (e, id) => {
+    e.preventDefault();
+    const section = document.querySelector(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <footer className="bg-[#132337] text-white">
       <div className="container mx-auto px-4 py-12">
@@ -30,36 +38,41 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="font-semibold mb-4">Quick Links</h4>
-            <ul className="space-y-2 text-sm text-primary-foreground/80">
-              <li>
-                <a href="#" className="hover:text-primary-foreground transition-colors">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary-foreground transition-colors">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary-foreground transition-colors">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary-foreground transition-colors">
-                  Vision & Mission
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary-foreground transition-colors">
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </div>
+           <div>
+      <h4 className="font-semibold mb-4">Quick Links</h4>
+      <ul className="space-y-2 text-sm text-primary-foreground/80 cursor-pointer">
+        <li
+          onClick={(e) => handleScroll(e, "#home")}
+          className="hover:text-primary-foreground transition-colors"
+        >
+          Home
+        </li>
+        <li
+          onClick={(e) => handleScroll(e, "#about")}
+          className="hover:text-primary-foreground transition-colors"
+        >
+          About Us
+        </li>
+        <li
+          onClick={(e) => handleScroll(e, "#services")}
+          className="hover:text-primary-foreground transition-colors"
+        >
+          Services
+        </li>
+        <li
+          onClick={(e) => handleScroll(e, "#vision")}
+          className="hover:text-primary-foreground transition-colors"
+        >
+          Vision & Mission
+        </li>
+        <li
+          onClick={(e) => handleScroll(e, "#contact")}
+          className="hover:text-primary-foreground transition-colors"
+        >
+          Contact
+        </li>
+      </ul>
+    </div>
 
           {/* Our Services */}
           <div>
@@ -67,32 +80,36 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>
                 <a href="#" className="hover:text-primary-foreground transition-colors">
-                  Home Loans
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary-foreground transition-colors">
-                  Business Loans
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-primary-foreground transition-colors">
                   Personal Loans
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-primary-foreground transition-colors">
-                  Investment Advisory
+      
+Industrial Finance
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-primary-foreground transition-colors">
-                  Insurance
+           
+Private Finance
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:text-primary-foreground transition-colors">
-                  Savings Plan
+     
+Loan Against Property (LAP)
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary-foreground transition-colors">
+          
+Vehicle Loans
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-primary-foreground transition-colors">
+       Gold Loans
                 </a>
               </li>
             </ul>
@@ -103,23 +120,24 @@ export function Footer() {
             <h4 className="font-semibold mb-4">Contact Information</h4>
             <div className="space-y-3 text-sm text-primary-foreground/80">
               <div>
-                <p>131, Mayur Colony,</p>
-                <p>Kothrud, Pune,</p>
-                <p>Maharashtra 411038</p>
+                <p>4th Floor,</p>
+                <p>Elpro City Mall</p>
+                <p>Chinchwad - 411033</p>
               </div>
               <div>
-                <p>+91 9898 911230</p>
-                <p>+91 81234 98765</p>
+                <p>+91 7276317098</p>
+          
               </div>
               <div>
-                <p>info@bharathkapital12.com</p>
+                <p>
+support@bharathkapital.com</p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
-          <p className="text-sm text-primary-foreground/60">© 2025 Bharat Kapital. All rights reserved.</p>
+          <p className="text-sm text-primary-foreground/60">© 2025 by SSI. Powered and secured by SATSON INNOVATION PVT LTD</p>
         </div>
       </div>
     </footer>
