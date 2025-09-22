@@ -2,6 +2,7 @@ import React from "react";
 import { ArrowRight, Star, Shield, Handshake, User, StarsIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import hero from "../assets/hero5.png";
+import PartnerMarque from "./PartnerMarque";
 
 const Hero = () => {
   return (
@@ -130,6 +131,8 @@ const Hero = () => {
           </div>
         </div>
       </section>
+
+      <PartnerMarque/>
 
       {/* Core Values Section */}
       <section className="py-10 md:py-16 px-4 sm:px-8 md:px-16 lg:px-32 xl:px-44 w-full">
