@@ -14,7 +14,7 @@ import { TeamPage } from './components/Team'
 
 export default function Home() {
   return (
-    <div  className='max-w-full  ' >
+    <div  className='max-w-full  bg-white' >
   
 
       <Navbar />
