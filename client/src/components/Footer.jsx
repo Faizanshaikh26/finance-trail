@@ -1,14 +1,7 @@
-import { Facebook, Twitter } from "lucide-react"
-import { Link } from "react-router-dom"
-export function Footer() {
+import { Facebook, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
-   const handleScroll = (e, id) => {
-    e.preventDefault();
-    const section = document.querySelector(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+export function Footer() {
   return (
     <footer className="bg-[#132337] text-white">
       <div className="container mx-auto px-4 py-12">
@@ -38,79 +31,50 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-           <div>
-      <h4 className="font-semibold mb-4">Quick Links</h4>
-      <ul className="space-y-2 text-sm text-primary-foreground/80 cursor-pointer">
-        <li
-          onClick={(e) => handleScroll(e, "#home")}
-          className="hover:text-primary-foreground transition-colors"
-        >
-          Home
-        </li>
-        <li
-          onClick={(e) => handleScroll(e, "#about")}
-          className="hover:text-primary-foreground transition-colors"
-        >
-          About Us
-        </li>
-        <li
-          onClick={(e) => handleScroll(e, "#services")}
-          className="hover:text-primary-foreground transition-colors"
-        >
-          Services
-        </li>
-        <li
-          onClick={(e) => handleScroll(e, "#vision")}
-          className="hover:text-primary-foreground transition-colors"
-        >
-          Vision & Mission
-        </li>
-        <li
-          onClick={(e) => handleScroll(e, "#contact")}
-          className="hover:text-primary-foreground transition-colors"
-        >
-          Contact
-        </li>
-      </ul>
-    </div>
+          <div>
+            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2 text-sm text-primary-foreground/80 cursor-pointer">
+              <li className="hover:text-primary-foreground transition-colors">Home</li>
+              <li className="hover:text-primary-foreground transition-colors">About Us</li>
+              <li className="hover:text-primary-foreground transition-colors">Services</li>
+              <li className="hover:text-primary-foreground transition-colors">Vision & Mission</li>
+              <li className="hover:text-primary-foreground transition-colors">Contact</li>
+            </ul>
+          </div>
 
           {/* Our Services */}
           <div>
             <h4 className="font-semibold mb-4">Our Services</h4>
             <ul className="space-y-2 text-sm text-primary-foreground/80">
               <li>
-                <a href="#" className="hover:text-primary-foreground transition-colors">
+                <Link to="/services/personal-loan" className="hover:text-primary-foreground transition-colors">
                   Personal Loans
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary-foreground transition-colors">
-      
-Industrial Finance
-                </a>
+                <Link to="/services/industrial-finance" className="hover:text-primary-foreground transition-colors">
+                  Industrial Finance
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary-foreground transition-colors">
-           
-Private Finance
-                </a>
+                <Link to="/services/private-finance" className="hover:text-primary-foreground transition-colors">
+                  Private Finance
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary-foreground transition-colors">
-     
-Loan Against Property (LAP)
-                </a>
+                <Link to="/services/loan-against-property" className="hover:text-primary-foreground transition-colors">
+                  Loan Against Property (LAP)
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary-foreground transition-colors">
-          
-Vehicle Loans
-                </a>
+                <Link to="/services/vehicle-loan" className="hover:text-primary-foreground transition-colors">
+                  Vehicle Loans
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-primary-foreground transition-colors">
-       Gold Loans
-                </a>
+                <Link to="/services/gold-loan" className="hover:text-primary-foreground transition-colors">
+                  Gold Loans
+                </Link>
               </li>
             </ul>
           </div>
@@ -126,20 +90,20 @@ Vehicle Loans
               </div>
               <div>
                 <p>+91 7276317098</p>
-          
               </div>
               <div>
-                <p>
-support@bharathkapital.com</p>
+                <p>support@bharathkapital.com</p>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
-          <p className="text-sm text-primary-foreground/60">© 2025 by SSI. Powered and secured by SATSON INNOVATION PVT LTD</p>
+          <p className="text-sm text-primary-foreground/60">
+            © 2025 by SSI. Powered and secured by SATSON INNOVATION PVT LTD
+          </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

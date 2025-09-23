@@ -17,8 +17,9 @@ import {
 } from "lucide-react";
 
 
-import ceo from '../../public/team/ceo.jpg'
-import victor from '../../public/team/victor.jpg'
+import ceo from '../assets/team/ceo.jpg'
+import victor from '../assets/team/VICTOR.png'
+import joshi from '../assets/team/JOSHI.png'
 
 
 const ACCENT = "#3C50E9";
@@ -101,6 +102,7 @@ export function TeamPage() {
               position="Business Development"
               description="Brings strong expertise in business growth and recovery management with a keen understanding of financial services and client needs."
               skills={["Growth Strategy", "Recovery", "Partnerships"]}
+              bgImage={joshi}
          
           
             />

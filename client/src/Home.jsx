@@ -10,25 +10,27 @@ import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import CEODesk from './components/CEODesk'
 import { TeamPage } from './components/Team'
+import WhatsAppButton from './components/WhatsappButton'
 
 
 export default function Home() {
   return (
-    <div  className='max-w-full  bg-white' >
-  
+    <div className='max-w-full  bg-white' >
+
 
       <Navbar />
 
 
       <Hero />
 
+<WhatsAppButton/>
       <About />
       <Services />
 
       <Vision />
 
-      <CEODesk/>
-      <TeamPage/>
+      <CEODesk />
+      <TeamPage />
 
       <FAQ />
 
