@@ -17,9 +17,10 @@ import {
 } from "lucide-react";
 
 
-import ceo from '../assets/team/ceo.jpg'
+
 import victor from '../assets/team/VICTOR.png'
 import joshi from '../assets/team/JOSHI.png'
+import ProfileSection from "./FounderProfile";
 
 
 const ACCENT = "#3C50E9";
@@ -45,12 +46,9 @@ export function TeamPage() {
               <div className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: ACCENT, animationDelay: "1s" }}></div>
             </div>
           </div>
-          <h1 className="mb-8 text-2xl md:text-3xl lg:text-6xl font-black tracking-tight text-black">
-            Our
-            <span className="block relative">
-              Dream Team
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-1 rounded-full" style={{ background: `linear-gradient(to right, ${ACCENT}, ${ACCENT})` }}></div>
-            </span>
+          <h1 className="mb-4 text-2xl md:text-3xl lg:text-6xl font-black tracking-tight text-black">
+            Our   Dream Team
+            
           </h1>
           <p className="text-xl md:text-2xl text-gray-500 leading-relaxed">
             Exceptional leaders driving innovation and excellence in financial services
@@ -62,33 +60,8 @@ export function TeamPage() {
       <section className="pb-20 relative">
         <div className="max-w-7xl mx-auto px-6">
           {/* CEO */}
-        <div className="mb-32 flex justify-center relative">
-    <div
-      className="w-80 h-80 rounded-2xl overflow-hidden relative group shadow-xl transform hover:scale-105 transition-all duration-700"
-      style={{
-        backgroundImage: `url(${ceo})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      {/* Dark Glass Overlay */}
-      {/* <div className="absolute inset-0 bg-black/50 backdrop-blur-sm rounded-2xl"></div> */}
-
-      {/* Text Content */}
-      <div className="absolute inset-0 flex flex-col justify-end items-center p-6 text-center">
-        <div className="mb-3 px-3 py-1 rounded-full bg-gradient-to-r from-[#3C50E9] to-[#00CFFF] text-white font-semibold text-xs shadow-md">
-          <Award className="inline-block h-3 w-3 mr-1" />
-          FOUNDER & CEO
-        </div>
-        <h3 className="text-2xl font-extrabold text-white drop-shadow-lg mb-8">
-          Mr. Ajay Gokhale
-        </h3>
-       
-      </div>
-
-      {/* Hover Accent Border */}
-      <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-gradient-to-r from-[#3C50E9] to-[#00CFFF] transition-all duration-700"></div>
-    </div>
+        <div className="mb-10 flex justify-center relative">
+    <ProfileSection/>
   </div>
 
           {/* Team Members Grid */}
