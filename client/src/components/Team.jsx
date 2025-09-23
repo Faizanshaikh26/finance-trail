@@ -16,6 +16,11 @@ import {
   Linkedin,
 } from "lucide-react";
 
+
+import ceo from '../../public/team/ceo.jpg'
+import victor from '../../public/team/victor.jpg'
+
+
 const ACCENT = "#3C50E9";
 
 export function TeamPage() {
@@ -56,25 +61,34 @@ export function TeamPage() {
       <section className="pb-20 relative">
         <div className="max-w-7xl mx-auto px-6">
           {/* CEO */}
-          <div className="mb-32 flex justify-center relative">
-            <div className="w-80 h-80 rounded-full overflow-hidden bg-white/10 relative group transform hover:scale-105 transition-all duration-700">
-              <div className="absolute inset-0" style={{background: `linear-gradient(to bottom right, ${ACCENT}33, ${ACCENT}33)`}}></div>
-              <div className="absolute inset-0 flex items-center justify-center text-center">
-                <div>
-                  <div className="w-32 h-32 rounded-full flex items-center justify-center text-6xl font-black mb-6 mx-auto" style={{ background: `linear-gradient(to bottom right, ${ACCENT}, ${ACCENT})`, color: "white" }}>
-                    AG
-                  </div>
-                  <div className="absolute bottom-8 left-8 right-8 text-center">
-                    <div className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold mb-2" style={{ background: `linear-gradient(to right, ${ACCENT}, ${ACCENT})`, color: 'white' }}>
-                      <Award className="h-3 w-3" />
-                      FOUNDER & CEO
-                    </div>
-                    <h3 className="text-xl font-black text-black">Dr. Ajay Gokhale</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="mb-32 flex justify-center relative">
+    <div
+      className="w-80 h-80 rounded-2xl overflow-hidden relative group shadow-xl transform hover:scale-105 transition-all duration-700"
+      style={{
+        backgroundImage: `url(${ceo})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* Dark Glass Overlay */}
+      {/* <div className="absolute inset-0 bg-black/50 backdrop-blur-sm rounded-2xl"></div> */}
+
+      {/* Text Content */}
+      <div className="absolute inset-0 flex flex-col justify-end items-center p-6 text-center">
+        <div className="mb-3 px-3 py-1 rounded-full bg-gradient-to-r from-[#3C50E9] to-[#00CFFF] text-white font-semibold text-xs shadow-md">
+          <Award className="inline-block h-3 w-3 mr-1" />
+          FOUNDER & CEO
+        </div>
+        <h3 className="text-2xl font-extrabold text-white drop-shadow-lg mb-8">
+          Mr. Ajay Gokhale
+        </h3>
+       
+      </div>
+
+      {/* Hover Accent Border */}
+      <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-gradient-to-r from-[#3C50E9] to-[#00CFFF] transition-all duration-700"></div>
+    </div>
+  </div>
 
           {/* Team Members Grid */}
           <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
@@ -87,7 +101,8 @@ export function TeamPage() {
               position="Business Development"
               description="Brings strong expertise in business growth and recovery management with a keen understanding of financial services and client needs."
               skills={["Growth Strategy", "Recovery", "Partnerships"]}
-              icon={<Briefcase className="h-6 w-6 text-white" />}
+         
+          
             />
 
             {/* Right Member */}
@@ -98,7 +113,8 @@ export function TeamPage() {
               position="Business Development"
               description="Brings a dynamic approach to building lasting client relationships and driving organizational growth with a keen eye for emerging opportunities."
               skills={["Client Relations", "Innovation", "Leadership"]}
-              icon={<Handshake className="h-6 w-6 text-white" />}
+       
+                  bgImage={victor}
               reverse
             />
 
@@ -165,19 +181,20 @@ export function TeamPage() {
 }
 
 // Team Member Component
-function TeamMember({ initials, name, role, position, description, skills, icon, reverse }) {
+function TeamMember({  name, role, position, description, skills, reverse ,bgImage}) {
   return (
     <div className={`relative group ${reverse ? 'md:flex-row-reverse' : 'md:flex-row'}`}>
       <div className="absolute inset-0 rounded-3xl transform transition-transform duration-500" style={{ background: `linear-gradient(to bottom right, ${ACCENT}1A, ${ACCENT}1A)` }}></div>
       <div className={`relative border-0 rounded-3xl overflow-hidden group-hover:scale-105 transition-all duration-500 flex flex-col md:${reverse ? 'flex-row-reverse' : 'flex-row'} bg-white/10`}>
-        <div className="md:w-1/3 relative">
-          <div className="aspect-square relative flex items-center justify-center" style={{ background: `linear-gradient(to bottom right, ${ACCENT}33, ${ACCENT}33)` }}>
-            <div className="w-24 h-24 rounded-2xl flex items-center justify-center text-3xl font-black text-white" style={{ background: `linear-gradient(to bottom right, ${ACCENT}, ${ACCENT})` }}>
-              {initials}
-            </div>
-            <div className="absolute bottom-4 right-4 w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: `linear-gradient(to bottom right, ${ACCENT}, ${ACCENT})` }}>
-              {icon}
-            </div>
+        <div className="md:w-1/3 relative" >
+          <div className="aspect-square relative flex items-center justify-center"  style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: 'cover',
+          // backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}>
+          
+           
           </div>
         </div>
         <div className="md:w-2/3 p-8">

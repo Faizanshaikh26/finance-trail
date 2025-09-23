@@ -2,6 +2,8 @@ import React from "react";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { FaQuoteLeft } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import vison from "../assets/vision.jpg";
+import misson from "../assets/misson.jpg";
 
 const Vision = () => {
   const certifications = [
@@ -12,7 +14,10 @@ const Vision = () => {
   ];
 
   return (
-    <div className="text-gray-800 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-32 py-10 w-full" id="vision">
+    <div
+      className="text-gray-800 px-4 sm:px-6 md:px-10 lg:px-16 xl:px-32 py-10 w-full"
+      id="vision"
+    >
       {/* Vision & Mission */}
       <section className="mb-20">
         <div className="mb-10 text-center">
@@ -32,69 +37,73 @@ const Vision = () => {
             transition={{ duration: 1, delay: 0.2 }}
             viewport={{ once: false, amount: 0.3 }}
           >
-            Guided by our core values and commitment to excellence in financial services.
+            Guided by our core values and commitment to excellence in financial
+            services.
           </motion.p>
         </div>
 
         {/* Vision */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2  gap-8 md:gap-0 items-center">
           <motion.div
-            className="flex justify-center"
+            className="flex justify-center items-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: false, amount: 0.3 }}
           >
             <img
-              src="https://www.ringcentral.com/gb/en/blog/wp-content/uploads/2021/05/happy-manager-leads-a-meeting-in-the-office-scaled.jpg"
+              src={vison}
               alt="Our Vision"
               className="w-full max-w-[500px] h-auto object-cover rounded-t-[40px] sm:rounded-t-[60px] md:rounded-t-[80px] lg:rounded-t-[100px]"
             />
           </motion.div>
           <motion.div
+            className="flex flex-col justify-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: false, amount: 0.3 }}
           >
-            <h3 className="mb-4  text-lg sm:text-xl md:text-2xl font-bold  text-center md:text-left">
+            <h3 className="mb-4 text-lg sm:text-xl md:text-2xl font-bold text-center md:text-left">
               Our Vision
             </h3>
             <p className="text-gray-800 text-sm sm:text-base md:text-lg xl:text-lg leading-relaxed text-center md:text-left">
-              To be the most trusted financial partner, empowering individuals and businesses
-              to achieve their financial aspirations through innovative, personalized solutions
-              and unwavering commitment to their success.
+              To be the most trusted financial partner, empowering individuals
+              and businesses to achieve their financial aspirations through
+              innovative, personalized solutions and unwavering commitment to
+              their success.
             </p>
           </motion.div>
         </div>
 
         {/* Mission */}
-        <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="mt-8 md:mt-12 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 items-center">
           <motion.div
-            className="order-2 md:order-1"
+            className="order-2 md:order-1 flex flex-col justify-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: false, amount: 0.3 }}
           >
-            <h3 className="mb-4 text-lg sm:text-xl md:text-2xl font-bold  text-center md:text-left">
+            <h3 className="mb-4 text-lg sm:text-xl md:text-2xl font-bold text-center md:text-left">
               Our Mission
             </h3>
             <p className="text-gray-800 text-sm sm:text-base md:text-lg xl:text-lg leading-relaxed text-center md:text-left">
-              To deliver exceptional financial services with integrity, transparency, and
-              expertise, building lasting relationships while helping our clients navigate
-              their financial journey with confidence and peace of mind.
+              To deliver exceptional financial services with integrity,
+              transparency, and expertise, building lasting relationships while
+              helping our clients navigate their financial journey with
+              confidence and peace of mind.
             </p>
           </motion.div>
           <motion.div
-            className="order-1 md:order-2 flex justify-center"
+            className="order-1 md:order-2 flex justify-center items-center"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: false, amount: 0.3 }}
           >
             <img
-              src="https://tse3.mm.bing.net/th/id/OIP.aZ1L5nsDnvBAFC0k2JZ4igHaF0?rs=1&pid=ImgDetMain&o=7&rm=3"
+              src={misson}
               alt="Our Mission"
               className="w-full max-w-[500px] h-auto object-cover rounded-t-[40px] sm:rounded-t-[60px] md:rounded-t-[80px] lg:rounded-t-[100px]"
             />
@@ -121,8 +130,8 @@ const Vision = () => {
             transition={{ duration: 1, delay: 0.2 }}
             viewport={{ once: false, amount: 0.3 }}
           >
-            Our certifications ensure that we meet the highest standards of financial
-            service delivery and regulatory compliance.
+            Our certifications ensure that we meet the highest standards of
+            financial service delivery and regulatory compliance.
           </motion.p>
         </div>
 
@@ -143,7 +152,9 @@ const Vision = () => {
               }}
             >
               <IoMdCheckmarkCircleOutline className="text-[#3C50E9] w-8 h-8 sm:w-10 sm:h-10 mb-2 sm:mb-4" />
-              <h4 className="font-semibold text-gray-800 text-base sm:text-lg">{cert.title}</h4>
+              <h4 className="font-semibold text-gray-800 text-base sm:text-lg">
+                {cert.title}
+              </h4>
               <p className="text-xs sm:text-sm text-gray-600">{cert.desc}</p>
               <p className="text-xs sm:text-sm text-gray-600">{cert.descs}</p>
             </motion.div>
@@ -167,7 +178,10 @@ const Vision = () => {
             <motion.div
               key={i}
               className="bg-[#F9F9F9] rounded-2xl shadow-sm p-4 sm:p-6 flex flex-col gap-3 sm:gap-4"
-              variants={{ hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 1 } } }}
+              variants={{
+                hidden: { opacity: 0 },
+                show: { opacity: 1, transition: { duration: 1 } },
+              }}
             >
               <FaQuoteLeft className="text-[#3C50E9] text-2xl sm:text-4xl md:text-5xl" />
               <p className="text-gray-700 text-sm sm:text-base md:text-lg">

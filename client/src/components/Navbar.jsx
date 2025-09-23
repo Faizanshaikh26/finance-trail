@@ -1,22 +1,33 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from  '../assets/logo.png'
+import Logo from "../assets/logo.png";
+import { ArrowDown } from "lucide-react";
+import application from "../assets/Application form Loan - Bharath Kapital-2.pdf";
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false); // for hover dropdown
 
-   const navLinks = [
+  const navLinks = [
     { name: "Home", path: "#home" },
     { name: "About", path: "#about" },
-  { name: "Services", path: "#services" },
+    { name: "Services", path: "#services", dropdown: true },
     { name: "Vision", path: "#vision" },
-     { name: "CEODesk", path: "#ceodesk" },
+    { name: "CEODesk", path: "#ceodesk" },
     { name: "Team", path: "#team" },
     { name: "Contact", path: "#contact" },
-   
   ];
 
+  const serviceItems = [
+    "Personal Loans",
+    "Industrial Finance",
+    "Private Finance",
+    "Loan Against Property (LAP)",
+    "Vehicle Loans",
+    "Gold Loans",
+  ];
 
-    const handleScroll = (e, id) => {
+  const handleScroll = (e, id) => {
     e.preventDefault();
     const section = document.querySelector(id);
     if (section) {
@@ -24,19 +35,18 @@ const Navbar = () => {
     }
     setMenuOpen(false);
   };
+
   return (
     <>
       {/* Fixed Navbar */}
       <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
         <nav className="relative px-4 md:px-20 py-4 flex justify-between items-center">
           {/* Logo */}
-
           <div className="w-[120px]">
- <NavLink to="/">
-            <img src={Logo} alt="Logo" className="w-full" />
-          </NavLink>
+            <NavLink to="/">
+              <img src={Logo} alt="Logo" className="w-full" />
+            </NavLink>
           </div>
-         
 
           {/* Burger Icon (Mobile) */}
           <div className="lg:hidden">
@@ -56,115 +66,150 @@ const Navbar = () => {
           </div>
 
           {/* Center Nav (Desktop) */}
-          <ul className="hidden lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6">
+          <ul className="hidden lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6 relative">
             {navLinks.map((link, idx) => (
-              <li key={idx}>
-               <a
+              <li
+                key={idx}
+                className="relative group"
+                onMouseEnter={() => link.dropdown && setServicesOpen(true)}
+                onMouseLeave={() => link.dropdown && setServicesOpen(false)}
+              >
+                <a
                   href={link.path}
                   onClick={(e) => handleScroll(e, link.path)}
-                  className="text-sm font-semibold text-gray-600 hover:text-blue-600 cursor-pointer"
+                  className="text-sm font-semibold text-gray-600 hover:text-blue-600 cursor-pointer flex items-center gap-1"
                 >
                   {link.name}
+                  {link.dropdown && (
+                    <ArrowDown
+                      className={`h-3 w-3 transition-transform duration-200 ${
+                        servicesOpen ? "rotate-180" : ""
+                      }`}
+                    />
+                  )}
                 </a>
+
+                {/* Dropdown */}
+                {link.dropdown && servicesOpen && (
+                  <ul className="absolute top-full left-0  w-56 bg-white border border-gray-200 rounded-lg shadow-lg py-2 z-50">
+                    {serviceItems.map((service, i) => (
+                      <li key={i}>
+                        <a
+                          href="#"
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition"
+                        >
+                          {service}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>
 
           {/* Right Buttons */}
           <div className="hidden lg:flex lg:items-center">
-            <NavLink
-              to="/signin"
-              className="lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-900 font-bold rounded-xl transition duration-200"
+            <a
+              href={application}
+              download
+              className="px-6 py-3 rounded-full bg-gradient-to-r from-[#3C50E9] to-[#00CFFF] text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300 flex items-center gap-2"
             >
-              Sign In
-            </NavLink>
-            <NavLink
-              to="/signup"
-              className="py-2 px-6 bg-blue-500 hover:bg-blue-600 text-sm text-white font-bold rounded-xl transition duration-200"
-            >
-              Sign Up
-            </NavLink>
+              Application Form
+              <ArrowDown className="h-4 w-4" />
+            </a>
           </div>
         </nav>
 
         {/* Mobile Menu */}
         {menuOpen && (
-  <div className="fixed inset-0 z-50 flex">
-    {/* Backdrop */}
-    <div
-      className="absolute inset-0 bg-black/40 backdrop-blur-sm"
-      onClick={() => setMenuOpen(false)}
-    ></div>
+          <div className="fixed inset-0 z-50 flex">
+            {/* Backdrop */}
+            <div
+              className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+              onClick={() => setMenuOpen(false)}
+            ></div>
 
-    {/* Sidebar */}
-    <nav className="relative flex flex-col w-4/5 max-w-xs h-full bg-white shadow-2xl rounded-r-3xl p-6 overflow-y-auto animate-slide-in-left">
-      
-      {/* Logo & Close */}
-      <div className="flex items-center justify-between mb-8">
-        <NavLink to="/" className="w-[120px]">
-          <img src={Logo} alt="Logo" className="w-full" />
-        </NavLink>
-        <button
-          onClick={() => setMenuOpen(false)}
-          className="p-2 rounded-full hover:bg-gray-100 transition"
-        >
-          <svg
-            className="h-6 w-6 text-gray-500"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
-      </div>
+            {/* Sidebar */}
+            <nav className="relative flex flex-col w-4/5 max-w-xs h-full bg-white shadow-2xl rounded-r-3xl p-6 overflow-y-auto animate-slide-in-left">
+              {/* Logo & Close */}
+              <div className="flex items-center justify-between mb-8">
+                <NavLink to="/" className="w-[120px]">
+                  <img src={Logo} alt="Logo" className="w-full" />
+                </NavLink>
+                <button
+                  onClick={() => setMenuOpen(false)}
+                  className="p-2 rounded-full hover:bg-gray-100 transition"
+                >
+                  <svg
+                    className="h-6 w-6 text-gray-500"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+              </div>
 
-      {/* Nav Links */}
-      <ul className="flex flex-col gap-4 mb-6">
-        {navLinks.map((link, idx) => (
-          <li key={idx}>
-            <a
-              href={link.path}
-              onClick={(e) => {
-                handleScroll(e, link.path);
-                setMenuOpen(false);
-              }}
-              className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition"
-            >
-              {link.name}
-            </a>
-          </li>
-        ))}
-      </ul>
+              {/* Nav Links */}
+              <ul className="flex flex-col gap-4 mb-6">
+                {navLinks.map((link, idx) => (
+                  <li key={idx}>
+                    <a
+                      href={link.path}
+                      onClick={(e) => {
+                        handleScroll(e, link.path);
+                        setMenuOpen(false);
+                      }}
+                      className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition"
+                    >
+                      {link.name}
+                    </a>
 
-      {/* CTA Buttons */}
-      <div className="mt-auto flex flex-col gap-3">
-        <NavLink
-          to="/signin"
-          className="block w-full text-center px-4 py-3 text-sm font-semibold bg-gray-100 rounded-xl hover:bg-gray-200 transition"
-        >
-          Sign In
-        </NavLink>
-        <NavLink
-          to="/signup"
-          className="block w-full text-center px-4 py-3 text-sm font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition"
-        >
-          Sign Up
-        </NavLink>
-        <p className="text-xs text-center text-gray-400 mt-6">
-   © 2025 by SSI. Powered and secured by SATSON INNOVATION PVT LTD
-        </p>
-      </div>
-    </nav>
-  </div>
-)}
+                    {/* Mobile dropdown for Services */}
+                    {link.dropdown && (
+                      <ul className="ml-4 mt-2 flex flex-col gap-2">
+                        {serviceItems.map((service, i) => (
+                          <li key={i}>
+                            <a
+                              href="#"
+                              className="block text-sm text-gray-600 hover:text-blue-600 transition"
+                            >
+                              {service}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
 
+              {/* CTA Buttons */}
+              <div className="mt-auto flex flex-col gap-3">
+                <a
+                  href={application}
+                  download
+                  className="px-6 py-3 rounded-full bg-gradient-to-r from-[#3C50E9] to-[#00CFFF] text-white font-semibold shadow-lg hover:scale-105 transition-transform duration-300 flex items-center gap-2"
+                >
+                  Application Form
+                  <ArrowDown className="h-4 w-4" />
+                </a>
+                <p className="text-xs text-center text-gray-400 mt-6">
+                  © 2025 by SSI. Powered and secured by SATSON INNOVATION PVT
+                  LTD
+                </p>
+              </div>
+            </nav>
+          </div>
+        )}
       </div>
 
       {/* Spacer div so content doesn't hide behind fixed navbar */}
