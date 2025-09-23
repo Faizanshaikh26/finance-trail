@@ -5,6 +5,13 @@ import hero from "../assets/hero5.png";
 import PartnerMarque from "./PartnerMarque";
 
 const Hero = () => {
+
+   const handleScroll = (e, id) => {
+    e.preventDefault();
+    const section = document.querySelector(id);
+    if (section) section.scrollIntoView({ behavior: "smooth" });
+
+  };
   return (
     <>
       {/* Hero Section */}
@@ -62,12 +69,12 @@ const Hero = () => {
               transition={{ duration: 0.7, delay: 0.2 }}
               viewport={{ once: false, amount: 0.3 }}
             >
-              <button className="flex items-center justify-center gap-2 bg-[#3C50E9] text-white px-6 py-3 sm:px-8 sm:py-3 rounded-full shadow-md hover:bg-blue-700 transition text-sm sm:text-base">
+              <button className="flex items-center justify-center gap-2 bg-[#3C50E9] text-white px-6 py-3 sm:px-8 sm:py-3 rounded-full shadow-md hover:bg-blue-700 transition text-sm sm:text-base"      onClick={(e) => handleScroll(e, "#contact")}  >
                 Get Started Today <ArrowRight size={18} />
               </button>
-              <button className="px-6 py-3 sm:px-8 sm:py-3 rounded-full border border-blue-600 text-[#3C50E9] hover:bg-blue-100 transition text-sm sm:text-base">
-                Learn More
-              </button>
+              <button className="px-6 py-3 sm:px-8 sm:py-3 rounded-full border border-blue-600 text-[#3C50E9] hover:bg-blue-100 transition text-sm sm:text-base" > 
+                Learn More 
+              </button    >
             </motion.div>
           </motion.div>
 
@@ -81,13 +88,17 @@ const Hero = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.3 }}
           >
-            <div className="relative w-fit">
-              <img
-                src={hero}
-                alt="Businessman"
-                className="max-w-[300px] sm:max-w-xs md:max-w-md lg:max-w-lg w-full h-auto relative z-10"
-              />
-            </div>
+       <div className="relative w-fit">
+  <img
+    src={hero}
+    alt="Businessman"
+    className="max-w-[300px] sm:max-w-xs md:max-w-md lg:max-w-lg w-full h-auto relative z-10"
+  />
+
+  {/* Gradient Overlay */}
+  <div className="absolute bottom-0 left-0 right-0 h-15 bg-gradient-to-t from-white via-white/80 to-transparent z-20"></div>
+</div>
+
           </motion.div>
         </div>
       </section>

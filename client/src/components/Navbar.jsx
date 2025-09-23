@@ -28,11 +28,12 @@ const navLinks = [
     { name: "Gold Loans", path: "/services/gold-loan" },
   ];
 
-  const handleScroll = (e, id) => {
+   const handleScroll = (e, id) => {
     e.preventDefault();
     const section = document.querySelector(id);
-    if (section) section.scrollIntoView({ behavior: "smooth" });
-    setMenuOpen(false);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
