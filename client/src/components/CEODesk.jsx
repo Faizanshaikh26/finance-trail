@@ -59,9 +59,10 @@ export default function CEODeskPage() {
                 </div>
               </div>
 
-              <h1 className="mb-6 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-black">
-                CEO <span className="block text-[#3C50E9]">Desk</span>
-              </h1>
+             <h1 className="mb-6 text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-black">
+  CEO <span className="text-[#3C50E9]">Desk</span>
+</h1>
+
 
               <p className="text-base sm:text-lg text-gray-500 leading-relaxed mb-6">
                 Discover the vision, values, and unwavering commitment that drives our mission to transform financial services.
