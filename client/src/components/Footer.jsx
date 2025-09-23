@@ -1,4 +1,4 @@
-import { Facebook, Twitter } from "lucide-react";
+import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function Footer() {
@@ -26,6 +26,12 @@ export function Footer() {
               </div>
               <div className="w-8 h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center">
                 <Facebook className="w-4 h-4" />
+              </div>
+              <div className="w-8 h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center">
+                <Instagram className="w-4 h-4" />
+              </div>
+              <div className="w-8 h-8 bg-primary-foreground/10 rounded-full flex items-center justify-center">
+                <Youtube className="w-4 h-4" />
               </div>
             </div>
           </div>
