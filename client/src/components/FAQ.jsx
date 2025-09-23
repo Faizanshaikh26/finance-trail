@@ -95,7 +95,7 @@ const FAQ = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center" >
+    <div className="max-w-6xl mx-auto px-4 py-10 sm:px-6 text-center" >
       <motion.h2
         className="text-2xl sm:text-4xl md:text-5xl font-semibold text-gray-900 mb-6 sm:mb-10"
         initial={{ opacity: 0, y: 20 }}

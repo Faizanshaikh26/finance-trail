@@ -89,7 +89,7 @@ const steps = [
 const psteps = [
   { time: "24-48 hrs", label: "Initial Approve" },
   { time: "3-7 days", label: "Documentation" },
-  { time: "7-15 days", label: "Final Disbursement" },
+  { time: "15 to 30 days", label: "Final Disbursement" },
 ];
 
 export function ProcessSection() {
@@ -97,7 +97,7 @@ export function ProcessSection() {
     <section className="py-4 md:py-12 bg-[#F2F2F2]">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Simple - 4-step Process</h2>
+          <h2 className="text-3xl font-bold text-foreground mb-4">Simple - 4-Step Process</h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
             Getting your financial solution has never been easier. Follow our streamlined process for quick approvals
             and hassle-free experience.

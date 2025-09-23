@@ -10,6 +10,8 @@ const Navbar = () => {
     { name: "Services", path: "#services" },
     { name: "Vision", path: "#vision" },
     { name: "Contact", path: "#contact" },
+    { name: "CEODesk", path: "#ceodesk" },
+    { name: "Team", path: "#team" },
   ];
 
 
@@ -86,83 +88,82 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="navbar-menu relative z-50">
-            <div
-              className="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"
-              onClick={() => setMenuOpen(false)}
-            ></div>
-            <nav className="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
-              {/* Logo & Close */}
-              <div className="flex items-center mb-8">
-                <NavLink
-                  to="/"
-                  className="mr-auto text-2xl font-bold text-blue-600"
-                >
-                  Logo
-                </NavLink>
-                <button
-                  className="navbar-close"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  <svg
-                    className="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                </button>
-              </div>
+  <div className="fixed inset-0 z-50 flex">
+    {/* Backdrop */}
+    <div
+      className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+      onClick={() => setMenuOpen(false)}
+    ></div>
 
-              {/* Mobile Nav Links */}
-              <ul>
-                {navLinks.map((link, idx) => (
-                  <li key={idx} className="mb-1">
-                   <a
-  href={link.path}
-  onClick={(e) => {
-    handleScroll(e, link.path);
-    setMenuOpen(false);
-  }}
-  className="text-sm font-semibold text-gray-600 hover:text-blue-600 cursor-pointer"
->
-  {link.name}
-</a>
+    {/* Sidebar */}
+    <nav className="relative flex flex-col w-4/5 max-w-xs h-full bg-white shadow-2xl rounded-r-3xl p-6 overflow-y-auto animate-slide-in-left">
+      
+      {/* Logo & Close */}
+      <div className="flex items-center justify-between mb-8">
+        <NavLink to="/" className="w-[120px]">
+          <img src={Logo} alt="Logo" className="w-full" />
+        </NavLink>
+        <button
+          onClick={() => setMenuOpen(false)}
+          className="p-2 rounded-full hover:bg-gray-100 transition"
+        >
+          <svg
+            className="h-6 w-6 text-gray-500"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      </div>
 
+      {/* Nav Links */}
+      <ul className="flex flex-col gap-4 mb-6">
+        {navLinks.map((link, idx) => (
+          <li key={idx}>
+            <a
+              href={link.path}
+              onClick={(e) => {
+                handleScroll(e, link.path);
+                setMenuOpen(false);
+              }}
+              className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition"
+            >
+              {link.name}
+            </a>
+          </li>
+        ))}
+      </ul>
 
-                  
-                  </li>
-                ))}
-              </ul>
+      {/* CTA Buttons */}
+      <div className="mt-auto flex flex-col gap-3">
+        <NavLink
+          to="/signin"
+          className="block w-full text-center px-4 py-3 text-sm font-semibold bg-gray-100 rounded-xl hover:bg-gray-200 transition"
+        >
+          Sign In
+        </NavLink>
+        <NavLink
+          to="/signup"
+          className="block w-full text-center px-4 py-3 text-sm font-semibold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition"
+        >
+          Sign Up
+        </NavLink>
+        <p className="text-xs text-center text-gray-400 mt-6">
+   © 2025 by SSI. Powered and secured by SATSON INNOVATION PVT LTD
+        </p>
+      </div>
+    </nav>
+  </div>
+)}
 
-              {/* Bottom Buttons */}
-              <div className="mt-auto pt-6">
-                <NavLink
-                  to="/signin"
-                  className="block px-4 py-3 mb-3 text-xs text-center font-semibold bg-gray-50 hover:bg-gray-100 rounded-xl"
-                >
-                  Sign In
-                </NavLink>
-                <NavLink
-                  to="/signup"
-                  className="block px-4 py-3 mb-2 text-xs text-center text-white font-semibold bg-blue-600 hover:bg-blue-700 rounded-xl"
-                >
-                  Sign Up
-                </NavLink>
-                <p className="my-4 text-xs text-center text-gray-400">
-                  Copyright © 2025
-                </p>
-              </div>
-            </nav>
-          </div>
-        )}
       </div>
 
       {/* Spacer div so content doesn't hide behind fixed navbar */}

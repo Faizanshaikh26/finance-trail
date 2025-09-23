@@ -8,6 +8,8 @@ import About from './components/About'
 import Vision from './components/Vision'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
+import CEODesk from './components/CEODesk'
+import { TeamPage } from './components/Team'
 
 
 export default function Home() {
@@ -24,6 +26,9 @@ export default function Home() {
       <Services />
 
       <Vision />
+
+      <CEODesk/>
+      <TeamPage/>
 
       <FAQ />
 

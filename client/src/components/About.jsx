@@ -25,7 +25,7 @@ const About = () => {
           <p className="mb-4 text-base sm:text-lg lg:text-xl text-black leading-relaxed">
             For over a decade, Bharath Kapital has been dedicated to delivering
             personalized financial solutions that empower individuals and
-            businesses to achieve their dreams with confidence. With ₹2.5Cr+ in
+            businesses to achieve their dreams with confidence. With ₹150.Cr+ in
             assets managed, 10,000+ trusted clients, and a 98% retention rate,
             our journey reflects the trust, loyalty, and success we’ve built
             together.
@@ -70,7 +70,7 @@ const About = () => {
       >
         {[
           { value: "10+", label: "Years Experience" },
-          { value: "₹2.5Cr+", label: "Assets Managed" },
+          { value: "₹150Cr+", label: "Assets Managed" },
           { value: "98%", label: "Client Retention Rate" },
           { value: "10,000+", label: "Clients Satisfied" },
         ].map((item, i) => (
@@ -140,7 +140,7 @@ const About = () => {
               {
                 img: <FiTrendingUp />,
                 title: "Proven Track Record",
-                desc: "10,000+ clients, ₹2.5Cr+ assets, 98% retention.",
+                desc: "10,000+ clients, ₹150.Cr+ assets, 98% retention.",
               },
             ].map((item, i) => (
               <motion.div
