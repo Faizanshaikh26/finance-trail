@@ -15,13 +15,14 @@ import {
   Car,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 const services = [
-  { icon: User, title: "Personal Loans", description: "Instant personal funds with easy paperwork and quick disbursal." },
-  { icon: Building2, title: "Industrial Finance", description: "Financial solutions tailored for industries to scale operations efficiently." },
-  { icon: Shield, title: "Private Finance", description: "Flexible and reliable private financing options for urgent needs." },
-  { icon: Home, title: "Loan Against Property (LAP)", description: "Unlock the value of your property to access larger funds at lower interest rates." },
-  { icon: Car, title: "Vehicle Loans", description: "Quick and affordable loans for cars, bikes, and commercial vehicles." },
-  { icon: PiggyBank, title: "Gold Loans", description: "Get instant funds by leveraging your gold assets with minimal documentation." },
+  { icon: User, title: "Personal Loans", description: "Instant personal funds with easy paperwork and quick disbursal.", path: "/services/personal-loan" },
+  { icon: Building2, title: "Industrial Finance", description: "Financial solutions tailored for industries to scale operations efficiently.", path: "/services/industrial-finance" },
+  { icon: Shield, title: "Private Finance", description: "Flexible and reliable private financing options for urgent needs.", path: "/services/private-finance" },
+  { icon: Home, title: "Loan Against Property (LAP)", description: "Unlock the value of your property to access larger funds at lower interest rates.", path: "/services/loan-against-property" },
+  { icon: Car, title: "Vehicle Loans", description: "Quick and affordable loans for cars, bikes, and commercial vehicles.", path: "/services/vehicle-loan" },
+  { icon: PiggyBank, title: "Gold Loans", description: "Get instant funds by leveraging your gold assets with minimal documentation.", path: "/services/gold-loan" },
 ];
 
 
@@ -49,27 +50,31 @@ export default function ServicesSection() {
           }}
         >
           {services.map((service, index) => {
-            const Icon = service.icon;
-            return (
-              <motion.div
-                key={index}
-                className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-shadow"
-                variants={{
-                  hidden: { opacity: 0, y: 30 },
-                  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-                }}
-              >
-                <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="w-[35px] h-[37px] text-[#3C50E9]" />
-                </div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-                <p className="text-gray-600 text-lg mb-4">{service.description}</p>
-                <button className="px-4 py-2 text-sm font-medium rounded-lg border border-blue-600 text-[#3C50E9] hover:bg-blue-600 hover:text-white transition">
-                  Learn More
-                </button>
-              </motion.div>
-            );
-          })}
+  const Icon = service.icon;
+  return (
+    <motion.div
+      key={index}
+      className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-lg transition-shadow"
+      variants={{
+        hidden: { opacity: 0, y: 30 },
+        show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
+      }}
+    >
+      <div className="w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+        <Icon className="w-[35px] h-[37px] text-[#3C50E9]" />
+      </div>
+      <h3 className="text-2xl font-semibold text-gray-900 mb-2">{service.title}</h3>
+      <p className="text-gray-600 text-lg mb-4">{service.description}</p>
+      <Link
+        to={service.path}
+        className="px-4 py-2 text-sm font-medium rounded-lg border border-blue-600 text-[#3C50E9] hover:bg-blue-600 hover:text-white transition inline-block"
+      >
+        Learn More
+      </Link>
+    </motion.div>
+  );
+})}
+
         </motion.div>
       </div>
 
