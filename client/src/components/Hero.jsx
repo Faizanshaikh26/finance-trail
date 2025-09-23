@@ -92,7 +92,7 @@ const Hero = () => {
         </div>
       </section>
 
-        <section className="  md:pb-16  px-4 sm:px-32  lg:px-44 w-full">
+        <section className="  md:pb-16  px-4 sm:px-32  lg:px-44 w-full bg-white">
         
 
         {/* Stats Section */}
