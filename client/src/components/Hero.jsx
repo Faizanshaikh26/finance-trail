@@ -72,7 +72,7 @@ const Hero = () => {
               <button className="flex items-center justify-center gap-2 bg-[#3C50E9] text-white px-6 py-3 sm:px-8 sm:py-3 rounded-full shadow-md hover:bg-blue-700 transition text-sm sm:text-base"      onClick={(e) => handleScroll(e, "#contact")}  >
                 Get Started Today <ArrowRight size={18} />
               </button>
-              <button className="px-6 py-3 sm:px-8 sm:py-3 rounded-full border border-blue-600 text-[#3C50E9] hover:bg-blue-100 transition text-sm sm:text-base" > 
+              <button onClick={(e)=>handleScroll(e,'#services')} className="px-6 py-3 sm:px-8 sm:py-3 rounded-full border border-blue-600 text-[#3C50E9] hover:bg-blue-100 transition text-sm sm:text-base" > 
                 Learn More 
               </button    >
             </motion.div>
