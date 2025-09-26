@@ -9,6 +9,7 @@ import IndustrialFinance from './pages/IndustrialFinance'
 import LAP from './pages/LAP'
 import PrivateFinance from './pages/PrivateFinance'
 import ScrollToTop from './components/ScrollToTop'
+import LegalAndCertificatePage from './components/Legal'
 
 export default function App() {
   return (
@@ -21,7 +22,7 @@ export default function App() {
 
         <Route path='/' element={<Home />} />
 
-
+    <Route path="/legal" element={<LegalAndCertificatePage />} />
         <Route path='/services/vehicle-loan' element={<VehicleLoan />} />
         <Route path='/services/gold-loan' element={<GoldLoan />} />
         <Route path='/services/loan-against-property' element={<LAP />} />

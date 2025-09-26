@@ -41,11 +41,15 @@ const navLinks = [
       <div className="fixed top-0 left-0 w-full z-50 bg-white shadow-md">
         <nav className="relative px-4 md:px-20 py-4 flex justify-between items-center">
           {/* Logo */}
-          <div className="w-[120px]">
-            <NavLink to="/">
-              <img src={Logo} alt="Logo" className="w-full" />
-            </NavLink>
-          </div>
+          <div className="w-[150px] flex flex-col items-center text-center">
+  <NavLink to="/">
+    <img src={Logo} alt="Logo" className="w-full" />
+  </NavLink>
+  <p className="text-xs mt-1">
+    Wholly subsidiary of MK Alliance Finance Limited
+  </p>
+</div>
+
 
           {/* Desktop Nav */}
           <ul className="hidden lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6 relative">
@@ -89,6 +93,13 @@ const navLinks = [
                 )}
               </li>
             ))}
+            <NavLink
+  to="/legal"
+  className="px-6 py-3 rounded-full border border-blue-500 text-blue-600 font-semibold hover:bg-blue-50 transition"
+>
+  Legal & Certificate
+</NavLink>
+
           </ul>
 
           {/* Right CTA */}
