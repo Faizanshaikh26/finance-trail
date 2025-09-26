@@ -169,38 +169,50 @@ const navLinks = [
 
               {/* Nav Links */}
               <ul className="flex flex-col gap-4 mb-6">
-                {navLinks.map((link, idx) => (
-                  <li key={idx}>
-                    <a
-                      href={link.path}
-                      onClick={(e) => {
-                        handleScroll(e, link.path);
-                        setMenuOpen(false);
-                      }}
-                      className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition"
-                    >
-                      {link.name}
-                    </a>
+  {navLinks.map((link, idx) => (
+    <li key={idx}>
+      <a
+        href={link.path}
+        onClick={(e) => {
+          handleScroll(e, link.path);
+          setMenuOpen(false);
+        }}
+        className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition"
+      >
+        {link.name}
+      </a>
 
-                    {/* Mobile dropdown */}
-                    {link.dropdown && (
-                      <ul className="ml-4 mt-2 flex flex-col gap-2">
-                        {serviceItems.map((service, i) => (
-                          <li key={i}>
-                            <NavLink
-                              to={service.path}
-                              onClick={() => setMenuOpen(false)}
-                              className="block text-sm text-gray-600 hover:text-blue-600 transition"
-                            >
-                              {service.name}
-                            </NavLink>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </li>
-                ))}
-              </ul>
+      {/* Mobile dropdown */}
+      {link.dropdown && (
+        <ul className="ml-4 mt-2 flex flex-col gap-2">
+          {serviceItems.map((service, i) => (
+            <li key={i}>
+              <NavLink
+                to={service.path}
+                onClick={() => setMenuOpen(false)}
+                className="block text-sm text-gray-600 hover:text-blue-600 transition"
+              >
+                {service.name}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      )}
+    </li>
+  ))}
+
+  {/* Legal & Certificate Link */}
+  <li>
+    <NavLink
+      to="/legal"
+      className="block px-4 py-2 rounded-md border border-blue-500 text-blue-600 font-semibold text-center hover:bg-blue-50 transition"
+      onClick={() => setMenuOpen(false)}
+    >
+      Legal & Certificate
+    </NavLink>
+  </li>
+</ul>
+
 
               {/* CTA */}
               <div className="mt-auto flex flex-col gap-3">
