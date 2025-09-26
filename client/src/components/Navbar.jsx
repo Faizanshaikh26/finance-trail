@@ -46,7 +46,8 @@ const navLinks = [
     <img src={Logo} alt="Logo" className="w-full" />
   </NavLink>
   <p className="text-xs mt-1">
-    Wholly subsidiary of MK Alliance Finance Limited
+
+   <i>(Wholly subsidiary of MK Alliance Finance)</i>
   </p>
 </div>
 

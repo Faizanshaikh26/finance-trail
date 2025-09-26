@@ -11,12 +11,18 @@ import PrivateFinance from './pages/PrivateFinance'
 import ScrollToTop from './components/ScrollToTop'
 import LegalAndCertificatePage from './components/Legal'
 
+import useBlockInspect from "../src/components/useBlockInspect";
+
 export default function App() {
+  useBlockInspect();
   return (
     <div className=' w-full min-h-screen  font-inter'>
 
+
+
 <ScrollToTop/>
       <LenisScroll />
+      
 
       <Routes>
 
