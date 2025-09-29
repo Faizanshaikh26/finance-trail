@@ -3,21 +3,24 @@ import { NavLink } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import { ArrowDown } from "lucide-react";
 import application from "../assets/Application form Loan - Bharath Kapital-2.pdf";
+import legal1 from "../assets/legal1.jpg";
+import legal2 from "../assets/legal2.jpg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [legalOpen, setLegalOpen] = useState(false);
 
-const navLinks = [
-  { name: "HOME", path: "#home" },
-  { name: "ABOUT", path: "#about" },
-  { name: "SERVICES", path: "#services", dropdown: true },
-  { name: "VISION", path: "#vision" },
-  { name: "CEODESK", path: "#ceodesk" },
-  { name: "TEAM", path: "#team" },
-  { name: "CONTACT", path: "#contact" },
-];
-
+  const navLinks = [
+    { name: "HOME", path: "#home" },
+    { name: "ABOUT", path: "#about" },
+    { name: "SERVICES", path: "#services", dropdown: true },
+    { name: "VISION", path: "#vision" },
+    { name: "CEODESK", path: "#ceodesk" },
+    { name: "TEAM", path: "#team" },
+    { name: "CONTACT", path: "#contact" },
+    { name: "LEGAL", path: "#legal", dialog: true }, // ✅ dialog link
+  ];
 
   const serviceItems = [
     { name: "Personal Loans", path: "/services/personal-loan" },
@@ -42,15 +45,13 @@ const navLinks = [
         <nav className="relative px-4 md:px-20 py-4 flex justify-between items-center">
           {/* Logo */}
           <div className="w-[150px] flex flex-col items-center text-center">
-  <NavLink to="/">
-    <img src={Logo} alt="Logo" className="w-full" />
-  </NavLink>
-  <p className="text-xs mt-1">
-
-   <i>(Wholly subsidiary of MK Alliance Finance)</i>
-  </p>
-</div>
-
+            <NavLink to="/">
+              <img src={Logo} alt="Logo" className="w-full" />
+            </NavLink>
+            <p className="text-xs mt-1 italic">
+              ( Wholly subsidiary of MK Alliance Finance Limited )
+            </p>
+          </div>
 
           {/* Desktop Nav */}
           <ul className="hidden lg:flex lg:mx-auto lg:items-center lg:w-auto lg:space-x-6 relative">
@@ -63,7 +64,14 @@ const navLinks = [
               >
                 <a
                   href={link.path}
-                  onClick={(e) => handleScroll(e, link.path)}
+                  onClick={(e) => {
+                    if (link.dialog) {
+                      e.preventDefault();
+                      setLegalOpen(true);
+                    } else {
+                      handleScroll(e, link.path);
+                    }
+                  }}
                   className="text-sm font-semibold text-gray-600 hover:text-blue-600 cursor-pointer flex items-center gap-1"
                 >
                   {link.name}
@@ -94,13 +102,6 @@ const navLinks = [
                 )}
               </li>
             ))}
-            <NavLink
-  to="/legal"
-  className="px-6 py-3 rounded-full border border-blue-500 text-blue-600 font-semibold hover:bg-blue-50 transition"
->
-  Legal & Certificate
-</NavLink>
-
           </ul>
 
           {/* Right CTA */}
@@ -170,50 +171,44 @@ const navLinks = [
 
               {/* Nav Links */}
               <ul className="flex flex-col gap-4 mb-6">
-  {navLinks.map((link, idx) => (
-    <li key={idx}>
-      <a
-        href={link.path}
-        onClick={(e) => {
-          handleScroll(e, link.path);
-          setMenuOpen(false);
-        }}
-        className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition"
-      >
-        {link.name}
-      </a>
+                {navLinks.map((link, idx) => (
+                  <li key={idx}>
+                    <a
+                      href={link.path}
+                      onClick={(e) => {
+                        if (link.dialog) {
+                          e.preventDefault();
+                          setMenuOpen(false);
+                          setLegalOpen(true);
+                        } else {
+                          handleScroll(e, link.path);
+                          setMenuOpen(false);
+                        }
+                      }}
+                      className="block text-lg font-medium text-gray-700 hover:text-blue-600 transition"
+                    >
+                      {link.name}
+                    </a>
 
-      {/* Mobile dropdown */}
-      {link.dropdown && (
-        <ul className="ml-4 mt-2 flex flex-col gap-2">
-          {serviceItems.map((service, i) => (
-            <li key={i}>
-              <NavLink
-                to={service.path}
-                onClick={() => setMenuOpen(false)}
-                className="block text-sm text-gray-600 hover:text-blue-600 transition"
-              >
-                {service.name}
-              </NavLink>
-            </li>
-          ))}
-        </ul>
-      )}
-    </li>
-  ))}
-
-  {/* Legal & Certificate Link */}
-  <li>
-    <NavLink
-      to="/legal"
-      className="block px-4 py-2 rounded-md border border-blue-500 text-blue-600 font-semibold text-center hover:bg-blue-50 transition"
-      onClick={() => setMenuOpen(false)}
-    >
-      Legal & Certificate
-    </NavLink>
-  </li>
-</ul>
-
+                    {/* Mobile dropdown */}
+                    {link.dropdown && (
+                      <ul className="ml-4 mt-2 flex flex-col gap-2">
+                        {serviceItems.map((service, i) => (
+                          <li key={i}>
+                            <NavLink
+                              to={service.path}
+                              onClick={() => setMenuOpen(false)}
+                              className="block text-sm text-gray-600 hover:text-blue-600 transition"
+                            >
+                              {service.name}
+                            </NavLink>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
 
               {/* CTA */}
               <div className="mt-auto flex flex-col gap-3">
@@ -236,6 +231,44 @@ const navLinks = [
 
       {/* Spacer */}
       <div className="pt-[77px] md:pt-[69px]"></div>
+
+      {/* ✅ Legal Dialog - Responsive */}
+      {legalOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50"
+          onClick={() => setLegalOpen(false)}
+        >
+          <div
+            className="bg-white rounded-lg shadow-lg w-[95%] max-w-4xl max-h-[90vh] overflow-y-auto p-6 relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setLegalOpen(false)}
+              className="absolute top-3 right-3 text-gray-500 hover:text-gray-800"
+            >
+              ✕
+            </button>
+
+            <h2 className="text-xl font-semibold mb-4 text-center">
+              Legal Documents
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <img
+                src={legal1}
+                alt="Legal Document 1"
+                className="w-full rounded-md shadow"
+              />
+              <img
+                src={legal2}
+                alt="Legal Document 2"
+                className="w-full rounded-md shadow"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import legal1 from "../assets/legal1.jpg";
 import legal2 from "../assets/legal2.jpg";
-import certificate from "../assets/IEC Certificate (2).jpg";
+// import certificate from "../assets/IEC Certificate (2).jpg";
 import Navbar from "./Navbar";
 import { Footer } from "./Footer";
 
@@ -37,14 +37,7 @@ const LegalAndCertificatePage = () => {
         </div>
 
         {/* Certificate Document */}
-        <div className="w-full max-w-3xl flex flex-col items-center">
-          <h2 className="text-lg font-medium mb-4 text-gray-700">IEC Certificate</h2>
-          <img
-            src={certificate}
-            alt="IEC Certificate"
-            className="w-full rounded-md shadow-md object-contain"
-          />
-        </div>
+        
       </div>
 
       <Footer />
