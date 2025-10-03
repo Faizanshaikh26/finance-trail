@@ -48,9 +48,7 @@ const Navbar = () => {
             <NavLink to="/">
               <img src={Logo} alt="Logo" className="w-full" />
             </NavLink>
-            <p className="text-xs mt-1 italic">
-              ( Wholly subsidiary of MK Alliance Finance Limited )
-            </p>
+            
           </div>
 
           {/* Desktop Nav */}
