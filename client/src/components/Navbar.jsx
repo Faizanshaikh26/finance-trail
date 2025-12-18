@@ -19,7 +19,7 @@ const Navbar = () => {
     { name: "CEODESK", path: "#ceodesk" },
     { name: "TEAM", path: "#team" },
     { name: "CONTACT", path: "#contact" },
-    { name: "LEGAL", path: "#legal", dialog: true }, // ✅ dialog link
+    // { name: "LEGAL", path: "#legal", dialog: true }, // ✅ dialog link
   ];
 
   const serviceItems = [
